@@ -1,42 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Document</title>
 </head>
+
 <body>
-    <nav id="navbar" class="navbar">
-        <a href="" class="logo">
-            <img src="" alt="">
+    <nav id="navbar" class="main-nav">
+        <a href="#acceuil" class="main-nav-logo">
+            <img src="Logos/MC-logo-light.svg" alt="">
+            <!-- <h2 data="Micro Club"></h2> -->
         </a>
-        <ul>
-            <li>
+        <ul class="main-nav-elements">
+            <li class="main-nav-element">
                 <a href="">Accueil</a>
             </li>
-            <li>
-                <a href="html/Page2.html">Présentation</a>
-                <ul>
-                    <li>
+            <li class="main-nav-element main-nav-element-hover">
+                <a href="html/Page2.html" class="h">Présentation</a>
+                <ul class="sub-nav-elements">
+                    <li class="sub-nav-element">
                         <a href="">qui sommes nous</a>
                     </li>
-                    <li>
+                    <li class="sub-nav-element">
                         <a href="">historique du club</a>
                     </li>
-                    <li>
+                    <li class="sub-nav-element">
                         <a href="">activités du club</a>
                     </li>
                 </ul>
             </li>
-            <li>
+            <li class="main-nav-element">
                 <a href="html/Page3.html">Evènements</a>
             </li>
-            <li>
+            <li class="main-nav-element">
                 <a href="html/Page4.html">Contact</a>
             </li>
-            <button class="reg-button"></button>
+            <button class="reg-button">S'inscrire<i class="fas fa-arrow-right"></i></button>
         </ul>
     </nav>
+    <main>
+        <section id="welcome" class="welcome">
+            <div class="welcome-container">
+                <div class="slides-container">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="images/1.jpg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="images/2.jpg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="images/3.jpg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="images/4.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="images/5.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-controls">
+                        <button id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="mini-description">
+                    <h2>nous rassemblons des passionnés de technologie</h2>
+                    <p>Micro Club est le premier club scientifique fondé en Algérie, le 5 mars 1985.
+
+                        Nous nous concentrons sur l'informatique et le domaine informatique alors que nous travaillons à
+                        la vulgarisation auprès de la communauté étudiante.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
