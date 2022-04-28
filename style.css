@@ -32,8 +32,8 @@ body{
 
 /* ------------------------------MAIN-NAV------------------------------------- */
 .main-nav{
-display: flex;
-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
     padding: 0 var(--sidePadding);
     background-color: var(--primaryColor);
     position: fixed;
