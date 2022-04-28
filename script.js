@@ -2,7 +2,7 @@ const slideContainer= document.querySelector('.slides-container');
 const slide = document.querySelector('.slides');
 const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
-const interval = 3000;
+const interval = 6000;
 
 let slides = document.querySelectorAll('.slide');
 let index = 1;
@@ -43,7 +43,11 @@ slide.addEventListener('mouseenter',()=>{
 slide.addEventListener('mouseleave',()=>{
     startSlide();
 })
+
+
 startSlide();
+
+
 // -------------------------------------------------
 nextBtn.addEventListener('mouseenter',()=>{
     clearInterval(intervalID);
@@ -59,28 +63,28 @@ prevBtn.addEventListener('mouseleave',()=>{
     startSlide();
 })
 
-nextBtn.addEventListener('click',()=>{
-    let slides = document.querySelectorAll('.slide');
-    if(slides[index].id === firstClone.id){
-        slide.style.transition = 'none';
-        index=1;
-        slide.style.transform = `translateX(${-slideWidth * index}px)`;
-    }else{
-        index++;
-        slide.style.transform = `translateX(${-slideWidth * index}px)`;
-        slide.style.transition = `.7s`;
-    }
-})
+// nextBtn.addEventListener('click',()=>{
+//     let slides = document.querySelectorAll('.slide');
+//     if(slides[index].id === firstClone.id){
+//         slide.style.transition = 'none';
+//         index=1;
+//         slide.style.transform = `translateX(${-slideWidth * index}px)`;
+//     }else{
+//         index++;
+//         slide.style.transform = `translateX(${-slideWidth * index}px)`;
+//         slide.style.transition = `.7s`;
+//     }
+// })
 
-prevBtn.addEventListener('moclick',()=>{
-    let slides=document.querySelectorAll('.slide');
-    if(slides[index].id===lastClone.id){
-        slide.style.transition='none';
-        index=slide.length-1;
-        slide.style.transform=`translateX(${slideWidth * index}px)`;
-    }else{
-        index--
-        slide.style.transform=`translateX(${slideWidth * index}px)`
-        slide.style.transition='.7s';
-    }
-});
+// prevBtn.addEventListener('click',()=>{
+//     let slides=document.querySelectorAll('.slide');
+//     if(slides[index].id === 'last-clone'){
+//         slide.style.transition='none';
+//         index=slides.length-1;
+//         slide.style.transform=`translateX(${slideWidth * index}px)`;
+//     }else{
+//         index--;
+//         slide.style.transform=`translateX(${slideWidth * index}px)`
+//         slide.style.transition='.7s';
+//     }
+// });
