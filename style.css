@@ -387,6 +387,8 @@ section {
 
 .brief-info>h2 {
     width: 10ch;
+    color: var(--primaryColor);
+    font-size: 2.3em;
 }
 
 .brief-info>p {
@@ -440,6 +442,7 @@ section {
                 rgba(255, 96, 206, 0.2) 15px 15px,
                 rgba(255, 96, 206, 0.1) 20px 20px,
                 rgba(255, 96, 206, 0.05) 25px 25px;
+    padding: 8px 30px;
 }
 
 .Article-Two{
@@ -450,10 +453,43 @@ section {
                 rgba(155, 208, 186, 0.05) 25px 25px;
 }
 
-.Article-One>h2{
+.A-2-H2, .A-1-H2{
     font-family: var(--mainFont);
     color: var(--dark);
     font-weight: 700;
     text-transform: capitalize;
     font-size: 2.5em;
 }
+.A-2-P,.A-1-P{
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 1.1em;
+    margin: 0.5em 0;
+    color: var(--dark);
+    width: fit-content;
+}
+
+.first-letter{
+    color: var(--dark);
+    float: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    width: 0.7em;
+    font-size: 300%;
+    padding-right: 6px;
+    line-height: 75%;
+}
+
+.rm{
+    color: #4B0082;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.A-2-H3{
+    color: var(--dark);
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: 700;
+    font-family: var(--mainFont);
+}
+/* -----------------------------Artical-1----------------------------- */
