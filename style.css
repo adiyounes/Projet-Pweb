@@ -494,8 +494,8 @@ section {
     margin-bottom: 10px;
 }
 /* -----------------------------Artical-1----------------------------- */
-.Artical-One-content{
-    /* display: none; */
+#Artical-One-content{
+    display: none;
     position: fixed;
     left: 0;
     padding: 0px 20%;
@@ -528,7 +528,7 @@ section {
 }
 
 .Article-One-content-container{
-    height: 1200vh;
+    height: 1410vh;
     width: 100%;
     background-color: var(--light);
     padding: 40px 60px;
