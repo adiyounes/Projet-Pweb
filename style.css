@@ -3,7 +3,7 @@
 
 :root {
     --sidePadding: 12%;
-    --primaryColor: #292750;
+    --primaryColor: rgb(41, 39, 80);
     --secondaryColor: #9bd0ba;
     --thirdColor: #ff60ce;
     --grey: #9b9eac;
@@ -485,11 +485,82 @@ section {
     cursor: pointer;
 }
 
-.A-2-H3{
+.A-2-H3, .A-1-H3{
     color: var(--dark);
     font-size: 1.5em;
     margin: 0;
     font-weight: 700;
     font-family: var(--mainFont);
+    margin-bottom: 10px;
 }
 /* -----------------------------Artical-1----------------------------- */
+.Artical-One-content{
+    /* display: none; */
+    position: fixed;
+    left: 0;
+    padding: 0px 20%;
+    top: 80px;
+    height: 100vh;
+    background-color: rgb(41, 39, 80,0.94); 
+}
+.scroll-div{
+    height: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.Article-One-content-container>p:first-of-type>.first-letter{
+    font-size: 400%;
+    height: 78%;
+}
+.Artical-One-content h2{
+    margin-bottom: 40px;
+}
+
+.Article-One h3{
+    margin-bottom: 20px;
+}
+
+.Artical-One-content p{
+    font-size: 1.4em;
+    margin: 0 0 30px 0;
+    line-height: 1.6em;
+}
+
+.Article-One-content-container{
+    height: 1200vh;
+    width: 100%;
+    background-color: var(--light);
+    padding: 40px 60px;
+}
+
+.article-One-img-container{
+    margin: 40px 0;
+    text-align: center;
+    font-style: italic;
+    font-size: 1em;
+}
+
+.Artical-One-content .A-1-H3-SP{
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.A-1-links{
+    color: var(--dark);
+}
+
+.A-1-P-SP{
+    position: relative;
+}
+
+.A-1-P-SP::after{
+    content: "";
+    position: absolute;
+    top: 3%;
+    left: -10px;
+    height: 94%;
+    width: 3px;
+    background-color: var(--dark);
+}
