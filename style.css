@@ -1,28 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Mitr:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
-:root{
+
+:root {
     --sidePadding: 12%;
     --primaryColor: #292750;
     --secondaryColor: #9bd0ba;
     --thirdColor: #ff60ce;
     --grey: #9b9eac;
     --light: #fff;
-    --dark: #0a0a0a;
+    --dark: #1f1f1f;
     --background: #fff;
-    --mainFont: 'barlow',sans-serif;
-    --secondaryFont: 'prompt',sans-serif;
+    --mainFont: 'barlow', sans-serif;
+    --secondaryFont: 'prompt', sans-serif;
     --primaryColorAlt: #64637a;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     margin: 0;
     background-color: var(--background);
     color: var(--grey);
@@ -30,8 +31,17 @@ body{
     height: 100%;
 }
 
+h2 {
+    margin: 0;
+    font-family: var(--mainFont);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--light);
+    font-size: 3em;
+}
+
 /* ------------------------------MAIN-NAV------------------------------------- */
-.main-nav{
+.main-nav {
     display: flex;
     flex-wrap: wrap;
     padding: 0 var(--sidePadding);
@@ -41,22 +51,22 @@ body{
     left: 0;
     top: 0;
     z-index: 100;
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15), 
-                0px 5px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15),
+        0px 5px 10px rgba(0, 0, 0, 0.05);
 }
 
-.main-nav-elements{
+.main-nav-elements {
     display: flex;
     list-style: none;
     margin: 0 0 0 auto;
 }
 
-.main-nav-element{
+.main-nav-element {
     margin: auto 1em;
     text-transform: uppercase;
 }
 
-.main-nav-element>a{
+.main-nav-element>a {
     color: var(--light);
     text-decoration: none;
     padding: 0.5em 0;
@@ -66,48 +76,49 @@ body{
     position: relative;
 }
 
-.main-nav-element>a::after, .sub-nav-element>a::after{
-	position: absolute;
-	content: "";
-	width: 0%;
-	height: 2px;
-	background-color: var(--thirdColor);
-	left: 50%;
-	bottom: 0;
-	transition: all 0.4s ease-in-out;
+.main-nav-element>a::after,
+.sub-nav-element>a::after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--thirdColor);
+    left: 50%;
+    bottom: 0;
+    transition: all 0.4s ease-in-out;
 }
 
-.main-nav-element>a:hover::after{
+.main-nav-element>a:hover::after {
     width: 80%;
-    left:10%;
+    left: 10%;
 }
 
 
-.main-nav-element>a:hover{
+.main-nav-element>a:hover {
     color: var(--thirdColor);
 }
 
-.main-nav-element:first-child > a::after{
+.main-nav-element:first-child>a::after {
     width: 80%;
-	left: 10%;
+    left: 10%;
 }
 
-.main-nav-element:first-child > a{
+.main-nav-element:first-child>a {
     color: var(--thirdColor);
 }
 
-.main-nav-logo{
+.main-nav-logo {
     height: 5em;
     width: 6em;
     display: flex;
     align-items: center;
 }
 
-.main-nav-element-hover{
+.main-nav-element-hover {
     position: relative;
 }
 
-.sub-nav-elements{
+.sub-nav-elements {
     display: flex;
     flex-direction: column;
     visibility: hidden;
@@ -120,21 +131,21 @@ body{
     width: max-content;
 }
 
-.main-nav-element-hover:hover .sub-nav-elements{
+.main-nav-element-hover:hover .sub-nav-elements {
     visibility: visible;
 }
 
-.sub-nav-elements:hover .main-nav-element-hover{
+.sub-nav-elements:hover .main-nav-element-hover {
     color: var(--thirdColor);
 }
 
-.sub-nav-element{
+.sub-nav-element {
     padding: 15px 10px;
     display: flex;
     justify-content: center;
 }
 
-.sub-nav-element>a{
+.sub-nav-element>a {
     text-decoration: none;
     color: var(--light);
     position: relative;
@@ -143,25 +154,25 @@ body{
 
 }
 
-.sub-nav-element>a::after{
+.sub-nav-element>a::after {
     bottom: -8px;
 }
 
-.sub-nav-element>a:hover::after{
+.sub-nav-element>a:hover::after {
     width: 80%;
-    left:10%;
+    left: 10%;
 }
 
-.sub-nav-element>a:hover{
+.sub-nav-element>a:hover {
     color: var(--thirdColor);
 }
 
-.main-nav-logo img{
+.main-nav-logo img {
     width: 100%;
     height: 100%;
 }
 
-.main-nav .reg-button{
+.main-nav .reg-button {
     width: 12rem;
     height: 50%;
     margin: AUTO 1em;
@@ -175,7 +186,8 @@ body{
     font-weight: 600;
     color: var(--light);
 }
-.main-nav .reg-button:hover{
+
+.main-nav .reg-button:hover {
     border: 0.1em solid var(--thirdColor);
     background-color: transparent;
     color: var(--thirdColor);
@@ -208,14 +220,14 @@ body{
 } */
 
 /* -----------------------first-section-home-page------------- */
-section{
+section {
     height: 100vh;
     width: 100%;
     padding: 5.9% var(--sidePadding) 0 var(--sidePadding);
     background-color: var(--primaryColor);
 }
 
-.welcome-container{
+.welcome-container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -224,30 +236,30 @@ section{
     padding: 0;
 }
 
-.slides-container{
+.slides-container {
     height: 100%;
     width: 60%;
     position: relative;
     overflow: hidden;
 }
 
-.slides{
+.slides {
     display: flex;
     height: 100%;
     width: 100%;
 }
 
-.slide{
+.slide {
     height: 100%;
     min-width: 100%;
 }
 
-.slide img{
+.slide img {
     height: 100%;
     width: 100%;
 }
 
-.slide-controls{
+.slide-controls {
     display: flex;
     position: absolute;
     top: 40%;
@@ -258,7 +270,8 @@ section{
     align-items: center;
 }
 
-#prev-btn,#next-btn{
+#prev-btn,
+#next-btn {
     background: transparent;
     cursor: pointer;
     font-size: 30px;
@@ -267,11 +280,12 @@ section{
     padding: 10px;
 }
 
-#prev-btn:focus,#next-btn:focus{
+#prev-btn:focus,
+#next-btn:focus {
     outline: none;
 }
 
-.mini-description{
+.mini-description {
     height: 100%;
     width: 40%;
     display: flex;
@@ -281,32 +295,28 @@ section{
     background-color: var(--secondaryColor);
 }
 
-.mini-description h2{
+.mini-description h2 {
     width: 15ch;
-    font-size: 3em;
-    color: var(--primaryColor);
-    font-weight: 600;
     line-height: 1em;
-    text-transform: uppercase;
-    font-family: var(--mainFont);
-    margin: 0;
+    color: var(--primaryColor);
 }
 
-.mini-description p{
+.mini-description p {
     font-size: 1em;
     color: var(--dark);
     line-height: 1em;
     margin: 40px 10px;
     font-family: var(--secondaryFont);
 }
+
 /* -----------------------------------------events-brief-show-container------------------ */
-.events-brief-show{
+.events-brief-show {
     padding-top: 0;
     background-color: var(--primaryColor);
     height: 150vh;
 }
 
-.events-brief-show-sub-sec{
+.events-brief-show-sub-sec {
     height: 100%;
     width: 100%;
     display: flex;
@@ -314,27 +324,23 @@ section{
     justify-content: space-evenly;
 }
 
-.events-brief-show-sub-sec>h2{
-    margin: 0 0 0 40px;
-    color: var(--light);
-    font-family: var(--mainFont);
-    font-size: 3em;
+.events-brief-show-sub-sec>h2 {
+    margin-left: 40px;
     position: relative;
-    font-weight: 600;
 }
 
-.events-brief-show-sub-sec>h2::after{
-	position: absolute;
-	content: "";
-	width: 20%;
-	height: 4px;
-	background-color: var(--background);
-	left: 0.3%;
-	bottom: -10%;
-	transition: all 0.4s ease-in-out;
+.events-brief-show-sub-sec>h2::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 4px;
+    background-color: var(--background);
+    left: 0.3%;
+    bottom: -10%;
+    transition: all 0.4s ease-in-out;
 }
 
-.events-brief-show-container{
+.events-brief-show-container {
     height: 80%;
     width: 100%;
     position: relative;
@@ -342,7 +348,7 @@ section{
     display: flex;
 }
 
-.event-slides{
+.event-slides {
     display: flex;
     height: 100%;
     width: 100%;
@@ -352,7 +358,7 @@ section{
     align-items: center;
 }
 
-.event-slide{
+.event-slide {
     height: 47%;
     width: 23.6%;
     padding: 20px;
@@ -360,11 +366,11 @@ section{
     border-radius: 10px;
     overflow: hidden;
     border: 0.5px solid #64637a;
-    box-shadow: 0.5rem 0.5rem var(--primaryColorAlt), 
-                -0.5rem -0.5rem var(--secondaryColor);
+    box-shadow: 0.5rem 0.5rem var(--primaryColorAlt),
+        -0.5rem -0.5rem var(--secondaryColor);
 }
 
-.img-container{
+.img-container {
     height: 50%;
     width: 100%;
     display: flex;
@@ -372,26 +378,82 @@ section{
     justify-content: center;
 }
 
-.img-container img{
+.img-container img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
     box-shadow: 0 0 50px #ccc;
 }
 
-.brief-info>h2{
-    margin: 0;
-    color: var(--primaryColor);
-    text-transform: uppercase;
-    font-family: var(--mainFont);
-    font-weight: 600;
+.brief-info>h2 {
     width: 10ch;
 }
 
-.brief-info>p{
+.brief-info>p {
     font-size: 1em;
     color: var(--primaryColorAlt);
     line-height: 1em;
     width: fit-content;
     font-family: var(--secondaryFont);
+}
+
+/* ----------------------------------Articles-------------------------- */
+.Articles-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.Articles-container>h2 {
+    position: relative;
+}
+
+.Articles-container>h2::after {
+    position: absolute;
+    content: "";
+    width: 13%;
+    height: 4px;
+    background-color: var(--background);
+    left: 0.3%;
+    bottom: -10%;
+    transition: all 0.4s ease-in-out;
+}
+
+.Articles-wrapper {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Article-One,
+.Article-Two {
+    background-color: var(--light);
+    width: 96%;
+    height: 45%;
+    border-radius: 15px 50px;
+    box-shadow: rgba(255, 96, 206, 0.4) 5px 5px, 
+                rgba(255, 96, 206, 0.3) 10px 10px,
+                rgba(255, 96, 206, 0.2) 15px 15px,
+                rgba(255, 96, 206, 0.1) 20px 20px,
+                rgba(255, 96, 206, 0.05) 25px 25px;
+}
+
+.Article-Two{
+    box-shadow: rgba(155, 208, 186, 0.4) 5px 5px, 
+                rgba(155, 208, 186, 0.3) 10px 10px,
+                rgba(155, 208, 186, 0.2) 15px 15px,
+                rgba(155, 208, 186, 0.1) 20px 20px,
+                rgba(155, 208, 186, 0.05) 25px 25px;
+}
+
+.Article-One>h2{
+    font-family: var(--mainFont);
+    color: var(--dark);
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 2.5em;
 }
