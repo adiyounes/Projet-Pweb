@@ -46,14 +46,13 @@
     </nav>
     <main>
         <section id="Welcome">
-            <div class="Welcome-container">
-            </div>
-            <div class="mini-description">
-                <h2>nous rassemblons les passionnés de technologie</h2>
-                <p>Micro Club est le premier club scientifique fondé en Algérie, le 5 mars 1985.
-
+            <div class="welcome-container">
+               <div class="mini-description">
+                    <h2>nous rassemblons les passionnés de technologie</h2>
+                    <p>Micro Club est le premier club scientifique fondé en Algérie, le 5 mars 1985.
                     Nous nous concentrons sur l'informatique et le domaine informatique alors que nous travaillons à
-                    la vulgarisation auprès de la communauté étudiante.</p>
+                   la vulgarisation auprès de la communauté étudiante.</p>        
+            </div>
             </div>
         </section>
         <section id="events-brief-show" class="events-brief-show">
@@ -61,52 +60,50 @@
                 <h2>
                     Nos Evènements
                 </h2>
-                <div class="events-brief-show-container">
-                    <div class="event-slides">
-                        <div class="event-slide">
-                            <div class="img-container">
-                                <img src="Logos/AGC.jpg" alt="">
-                            </div>
-                            <div class="brief-info">
-                                <h2>alerian game show</h2>
-                                <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
-                            </div>
+                <div class="event-slides">
+                    <div class="event-slide">
+                        <div class="img-container">
+                            <img src="Logos/AGC.jpg" alt="">
                         </div>
-                        <div class="event-slide">
-                            <div class="img-container">
-                                <img src="Logos/AGC.jpg" alt="">
-                            </div>
-                            <div class="brief-info">
-                                <h2>alerian game show</h2>
-                                <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
-                            </div>
+                        <div class="brief-info">
+                            <h2>alerian game show</h2>
+                            <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
                         </div>
-                        <div class="event-slide">
-                            <div class="img-container">
-                                <img src="Logos/AGC.jpg" alt="">
-                            </div>
-                            <div class="brief-info">
-                                <h2>alerian game show</h2>
-                                <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
-                            </div>
+                    </div>
+                    <div class="event-slide">
+                        <div class="img-container">
+                            <img src="Logos/AGC.jpg" alt="">
                         </div>
-                        <div class="event-slide">
-                            <div class="img-container">
-                                <img src="Logos/AGC.jpg" alt="">
-                            </div>
-                            <div class="brief-info">
-                                <h2>alerian game show</h2>
-                                <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
-                            </div>
+                        <div class="brief-info">
+                            <h2>alerian game show</h2>
+                            <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
                         </div>
-                        <div class="event-slide">
-                            <div class="img-container">
-                                <img src="Logos/AGC.jpg" alt="">
-                            </div>
-                            <div class="brief-info">
-                                <h2>alerian game show</h2>
-                                <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
-                            </div>
+                    </div>
+                    <div class="event-slide">
+                        <div class="img-container">
+                            <img src="Logos/AGC.jpg" alt="">
+                        </div>
+                        <div class="brief-info">
+                            <h2>alerian game show</h2>
+                            <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
+                        </div>
+                    </div>
+                    <div class="event-slide">
+                        <div class="img-container">
+                            <img src="Logos/AGC.jpg" alt="">
+                        </div>
+                        <div class="brief-info">
+                            <h2>alerian game show</h2>
+                            <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
+                        </div>
+                    </div>
+                    <div class="event-slide">
+                        <div class="img-container">
+                            <img src="Logos/AGC.jpg" alt="">
+                        </div>
+                        <div class="brief-info">
+                            <h2>alerian game show</h2>
+                            <p>aznxzajx ajxnq sxkzjza xszjxnazx azxj,as x azknx xazs</p>
                         </div>
                     </div>
                 </div>
@@ -134,7 +131,7 @@
                         <p class="A-1-P">
                             This article will answer the questions that are asked in order to understand What Game
                             development is and What process it follows.<span class="rm"
-                            onclick="document.getElementById('Artical-One-content').style.display='block'">Read-more</span>
+                            onclick="document.getElementById('Artical-One-content').style.display='flex'">Read-more</span>
                         </p>
                     </div>
                     <div class="Article-Two">
@@ -596,7 +593,25 @@
             </div>
         </section>
     </main>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        let x=document.getElementById("navbar");
+        let y=0;
+        window.addEventListener("scroll",(e)=>{
+            a=document.documentElement.scrollTop
+            if(a>1){
+                x.style.position="fixed"
+            }
+            if(a>"500" && y==0){
+                x.className+=" fix-it"
+                y++
+            }
+            if(a<"500" && y==1){
+                x.className="navbar"
+                y--;
+            }
+         })
+    </script>
 </body>
 
 </html>
