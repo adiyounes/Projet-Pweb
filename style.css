@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --sidePadding: 12%;
+    --sidePadding: 8%;
     --primaryColor: rgb(41, 39, 80);
     --secondaryColor: #9bd0ba;
     --thirdColor: #ff60ce;
@@ -41,35 +41,46 @@ h2 {
 }
 
 /* ------------------------------MAIN-NAV------------------------------------- */
-.main-nav {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 var(--sidePadding);
+#navbar{
     background-color: var(--primaryColor);
     position: fixed;
-    width: 100%;
+    z-index: 100;
     left: 0;
     top: 0;
-    z-index: 100;
+    width: 100%;
+    padding: 0.8em 0;
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15),
-        0px 5px 10px rgba(0, 0, 0, 0.05);
+    0px 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.main-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* margin: 0 auto; */
+    padding: 0 10px;
 }
 
 .main-nav-elements {
     display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
-    margin: 0 0 0 auto;
+    padding: 0.2em 0;
+    margin: 0;
 }
 
 .main-nav-element {
-    margin: auto 1em;
     text-transform: uppercase;
+    display: flex;
+    margin: auto 0.5em;
 }
 
 .main-nav-element>a {
     color: var(--light);
     text-decoration: none;
-    padding: 0.5em 0;
+    padding: 1.8em 0.3em;
+    margin: -0.8em auto;
     font-weight: 600;
     font-family: var(--mainFont);
     transition: all 0.3s ease-in-out;
@@ -84,34 +95,27 @@ h2 {
     height: 2px;
     background-color: var(--thirdColor);
     left: 50%;
-    bottom: 0;
-    transition: all 0.4s ease-in-out;
+    bottom: 23px;
+    transition: all 0.5s ease-in-out;
 }
 
-.main-nav-element>a:hover::after {
+.main-nav-element>a:hover::after{
     width: 80%;
     left: 10%;
 }
 
 
-.main-nav-element>a:hover {
+.main-nav-element>a:hover{
     color: var(--thirdColor);
 }
 
-.main-nav-element:first-child>a::after {
+.main-nav-element .active::after, .stay-effect::after {
     width: 80%;
     left: 10%;
 }
 
-.main-nav-element:first-child>a {
+.main-nav-element .active {
     color: var(--thirdColor);
-}
-
-.main-nav-logo {
-    height: 5em;
-    width: 6em;
-    display: flex;
-    align-items: center;
 }
 
 .main-nav-element-hover {
@@ -125,7 +129,7 @@ h2 {
     position: absolute;
     list-style: none;
     background-color: var(--primaryColor);
-    top: 20px;
+    top: 55px;
     left: 0;
     padding: 0;
     width: max-content;
@@ -139,8 +143,7 @@ h2 {
     color: var(--thirdColor);
 }
 
-.sub-nav-element {
-    padding: 15px 10px;
+.sub-nav-element{
     display: flex;
     justify-content: center;
 }
@@ -151,11 +154,11 @@ h2 {
     position: relative;
     font-weight: 600;
     font-family: var(--mainFont);
-
+    padding: 15px 10px;
 }
 
 .sub-nav-element>a::after {
-    bottom: -8px;
+    bottom: 10px;
 }
 
 .sub-nav-element>a:hover::after {
@@ -167,58 +170,39 @@ h2 {
     color: var(--thirdColor);
 }
 
-.main-nav-logo img {
+.main-nav-logo{
+    height: 56px;
+}
+
+.main-nav-logo>img {
     width: 100%;
     height: 100%;
 }
 
 .main-nav .reg-button {
-    width: 12rem;
-    height: 50%;
-    margin: AUTO 1em;
+    padding: 0.5em 1.5em;
     border-radius: 100PX;
     background-color: var(--thirdColor);
     transition: all 0.4s ease-in-out;
     font-size: 1.2em;
-    border: none;
+    border: 0.1em solid var(--thirdColor);
     text-transform: uppercase;
     font-family: var(--mainFont);
     font-weight: 600;
     color: var(--light);
+    margin: auto 0 auto 0.3em;
+}
+
+.fas{
+    margin-left: 0.5em;
 }
 
 .main-nav .reg-button:hover {
-    border: 0.1em solid var(--thirdColor);
     background-color: transparent;
     color: var(--thirdColor);
     box-shadow: 0px -0.03em 0.33em var(--thirdColor);
     cursor: pointer;
 }
-
-/* .main-nav-logo{
-    position: relative;
-}
-
-.main-nav-logo::after{
-    content: attr(data);
-    position: absolute;
-    left: 0;
-    top: 30%;
-    font-size: 1em;
-    text-transform: uppercase;
-    visibility: hidden;
-    color: var(--light);
-    font-family: var(--mainFont);
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-
-.main-nav-logo:hover::after{
-    width: max-content;
-    left: 100%;
-    visibility: visible;
-} */
-
 /* -----------------------first-section-home-page------------- */
 section {
     height: 100vh;
@@ -227,84 +211,69 @@ section {
     background-color: var(--primaryColor);
 }
 
-.welcome-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 0;
-    padding: 0;
-}
-
-.slides-container {
-    height: 100%;
-    width: 60%;
+#Welcome{
+    padding: 0 var(--sidePadding);
     position: relative;
-    overflow: hidden;
 }
-
-.slides {
-    display: flex;
-    height: 100%;
+.Welcome-container{
     width: 100%;
+    height: 100%;
 }
 
-.slide {
-    height: 100%;
-    min-width: 100%;
-}
-
-.slide img {
-    height: 100%;
+#Welcome::before{
+    content: "";
+    background-image: url(./images/laptop-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
     width: 100%;
-}
-
-.slide-controls {
-    display: flex;
+    height: 100%;
+    opacity: 0.5;
     position: absolute;
-    top: 40%;
-    left: 0;
-    transform: translateY(50%);
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
+    left: 0%;
+    top: 0%;
 }
 
-#prev-btn,
-#next-btn {
-    background: transparent;
-    cursor: pointer;
-    font-size: 30px;
-    border: none;
-    color: var(--grey);
-    padding: 10px;
-}
-
-#prev-btn:focus,
-#next-btn:focus {
-    outline: none;
+#Welcome::after{
+    content: "";
+    width: 33%;
+    height: 100%;
+    background-color: var(--primaryColor);
+    opacity: 0.5;
+    left: 54%;
+    top: 0;
+    position: absolute;
+    box-shadow: 5px 0 0 var(--thirdColor),-5px 0 0 var(--thirdColor);
 }
 
 .mini-description {
     height: 100%;
-    width: 40%;
+    width: 33%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--secondaryColor);
+    position: absolute;
+    top: 0;
+    left: 54%;
+    z-index: 2;
 }
 
 .mini-description h2 {
     width: 15ch;
     line-height: 1em;
-    color: var(--primaryColor);
+    color: var(--light);
+}
+
+.mini-description h2::first-line{
+    color: var(--thirdColor);
 }
 
 .mini-description p {
     font-size: 1em;
-    color: var(--dark);
-    line-height: 1em;
+    color: var(--light);
+    line-height: 1.4em;
     margin: 40px 10px;
     font-family: var(--secondaryFont);
 }
@@ -502,13 +471,29 @@ section {
     top: 80px;
     height: 100vh;
     background-color: rgb(41, 39, 80,0.94); 
+    z-index: 3;
 }
+
 .scroll-div{
+    display: flex;
+    flex-direction: column;
     height: 90%;
     margin: 0 auto;
     overflow: hidden;
     overflow-y: scroll;
 }
+
+#Artical-One-content .A-exit{
+    position: sticky;
+    right: 20px;
+    top: 20px;
+    font-size: 3em;
+    float: right;
+    margin: -55px 0 0 93%;
+    cursor: pointer;
+    color: red;
+}
+
 .Article-One-content-container>p:first-of-type>.first-letter{
     font-size: 400%;
     height: 78%;
@@ -564,3 +549,63 @@ section {
     width: 3px;
     background-color: var(--dark);
 }
+
+
+/* -----------------OLD-Home------------------------------ */
+/* .welcome-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0;
+}
+
+.slides-container {
+    height: 100%;
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.slide {
+    height: 100%;
+    min-width: 100%;
+}
+
+.slide img {
+    height: 100%;
+    width: 100%;
+}
+
+.slide-controls {
+    display: flex;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    transform: translateY(50%);
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+#prev-btn,
+#next-btn {
+    background: transparent;
+    cursor: pointer;
+    font-size: 30px;
+    border: none;
+    color: var(--grey);
+    padding: 10px;
+}
+
+#prev-btn:focus,
+#next-btn:focus {
+    outline: none;
+} */

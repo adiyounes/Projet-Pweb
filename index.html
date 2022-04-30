@@ -11,71 +11,49 @@
 </head>
 
 <body>
-    <nav id="navbar" class="main-nav">
-        <a href="#acceuil" class="main-nav-logo">
-            <img src="Logos/MC-logo-light.svg" alt="">
-            <!-- <h2 data="Micro Club"></h2> -->
-        </a>
-        <ul class="main-nav-elements">
-            <li class="main-nav-element">
-                <a href="">Accueil</a>
-            </li>
-            <li class="main-nav-element main-nav-element-hover">
-                <a href="Presentation/Presentation.html" class="h">Présentation</a>
-                <ul class="sub-nav-elements">
-                    <li class="sub-nav-element">
-                        <a href="Presentation/Presentation.html#Who">qui sommes nous</a>
-                    </li>
-                    <li class="sub-nav-element">
-                        <a href="Presentation/Presentation.html#History">historique du club</a>
-                    </li>
-                    <li class="sub-nav-element">
-                        <a href="/Presentation/Presentation.html#Activities">activités du club</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="main-nav-element">
-                <a href="Events/Events.html">Evènements</a>
-            </li>
-            <li class="main-nav-element">
-                <a href="Contact/Contact.css">Contact</a>
-            </li>
-            <button class="reg-button">S'inscrire<i class="fas fa-arrow-right"></i></button>
-        </ul>
+    <nav id="navbar" class="navbar">
+        <div class="main-nav">
+            <a href="#acceuil" class="main-nav-logo active">
+                <img src="Logos/MC-logo-light.svg" alt="" width="0" height="0">
+            </a>
+            <ul class="main-nav-elements">
+                <li class="main-nav-element">
+                    <a class="active" href="">Accueil</a>
+                </li>
+                <li class="main-nav-element main-nav-element-hover">
+                    <a href="Presentation/Presentation.html" class="h">Présentation</a>
+                    <ul class="sub-nav-elements">
+                        <li class="sub-nav-element">
+                            <a href="Presentation/Presentation.html#Who">qui sommes nous</a>
+                        </li>
+                        <li class="sub-nav-element">
+                            <a href="Presentation/Presentation.html#History">historique du club</a>
+                        </li>
+                        <li class="sub-nav-element">
+                            <a href="/Presentation/Presentation.html#Activities">activités du club</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="main-nav-element">
+                    <a href="Events/Events.html">Evènements</a>
+                </li>
+                <li class="main-nav-element">
+                    <a href="Contact/Contact.css">Contact</a>
+                </li>
+                <button class="reg-button">S'inscrire<i class="fas fa-arrow-right"></i></button>
+            </ul>
+        </div>
     </nav>
     <main>
-        <section id="welcome" class="welcome">
-            <div class="welcome-container">
-                <div class="slides-container">
-                    <div class="slides">
-                        <div class="slide">
-                            <img src="images/1.jpg" alt="">
-                        </div>
-                        <div class="slide">
-                            <img src="images/2.jpg" alt="">
-                        </div>
-                        <div class="slide">
-                            <img src="images/3.jpg" alt="">
-                        </div>
-                        <div class="slide">
-                            <img src="images/4.jpg" alt="">
-                        </div>
-                        <div class="slide">
-                            <img src="images/5.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="slide-controls">
-                        <button id="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                        <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-                <div class="mini-description">
-                    <h2>nous rassemblons les passionnés de technologie</h2>
-                    <p>Micro Club est le premier club scientifique fondé en Algérie, le 5 mars 1985.
+        <section id="Welcome">
+            <div class="Welcome-container">
+            </div>
+            <div class="mini-description">
+                <h2>nous rassemblons les passionnés de technologie</h2>
+                <p>Micro Club est le premier club scientifique fondé en Algérie, le 5 mars 1985.
 
-                        Nous nous concentrons sur l'informatique et le domaine informatique alors que nous travaillons à
-                        la vulgarisation auprès de la communauté étudiante.</p>
-                </div>
+                    Nous nous concentrons sur l'informatique et le domaine informatique alors que nous travaillons à
+                    la vulgarisation auprès de la communauté étudiante.</p>
             </div>
         </section>
         <section id="events-brief-show" class="events-brief-show">
@@ -134,8 +112,6 @@
                 </div>
             </div>
         </section>
-    </main>
-    <footer>
         <section id="Articles">
             <div class="Articles-container">
                 <h2>Articles</h2>
@@ -158,7 +134,7 @@
                         <p class="A-1-P">
                             This article will answer the questions that are asked in order to understand What Game
                             development is and What process it follows.<span class="rm"
-                                onclick="console.log('hi')">Read-more</span>
+                            onclick="document.getElementById('Artical-One-content').style.display='block'">Read-more</span>
                         </p>
                     </div>
                     <div class="Article-Two">
@@ -175,13 +151,16 @@
                             and
                             monetization of video games. It encompasses dozens of job disciplines and its component
                             parts employ thousands of people worldwide. The gaming industry has grown from focused
-                            markets to the mainstream in the recent years.<span class="rm"
-                                onclick="document.getElementById('Artical-One-content').style.display='block'">Read-more</span>
+                            markets to the mainstream in the recent years.<span class="rm" class="rm"
+                            onclick="document.getElementById('Artical-One-content').style.display='block'">Read-more</span>
                         </p>
                     </div>
                 </div>
                 <div id="Artical-One-content" class="Artical-One-content">
                     <div class="scroll-div">
+                        <a onclick="document.getElementById('Artical-One-content').style.display='none'" class="A-exit">
+                            <i class="far fa-times-circle"></i>
+                        </a>
                         <div class="Article-One-content-container">
                             <h2 class="A-1-H2">How video games are made</h2>
                             <p class="A-1-P"> <span class="first-letter">F</span>rom role-playing games, shooters,
@@ -268,7 +247,7 @@
                                 money are spent on a digital version, and should unearth any potential difficulties or
                                 challenges that could affect the gameplay.
                                 Free tools are a great way to adopt this approach, so they’re used enthusiastically.
-
+    
                             </p>
                             <p class="A-1-P">
                                 Tools like Unity and Blender -and many others-, give placeholder assets that are used
@@ -493,7 +472,7 @@
                                     </p>
                                 </a>
                             </p>
-
+    
                             </p>
                             <h3 class="A-1-H3">The Post-Production:</h3>
                             <p class="A-1-P">
@@ -616,7 +595,7 @@
                 </div>
             </div>
         </section>
-    </footer>
+    </main>
     <script src="script.js"></script>
 </body>
 
