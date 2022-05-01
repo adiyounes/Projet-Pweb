@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Mitr:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
-:root{
+
+:root {
     --sidePadding: 12%;
     --primaryColor: #292750;
     --secondaryColor: #9bd0ba;
@@ -10,20 +11,20 @@
     --light: #fff;
     --dark: #0a0a0a;
     --background: #fff;
-    --mainFont: 'barlow',sans-serif;
-    --secondaryFont: 'prompt',sans-serif;
+    --mainFont: 'barlow', sans-serif;
+    --secondaryFont: 'prompt', sans-serif;
     --primaryColorAlt: #64637a;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     margin: 0;
     background-color: var(--background);
     color: var(--grey);
@@ -41,40 +42,52 @@ h2 {
 }
 
 /* ---------------------------------------NAV-BAR----------------- */
-#navbar{
-    padding: 0 var(--sidePadding);
+.navbar{
     background-color: var(--primaryColor);
     position: fixed;
     z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
+    padding: 0.8em 0;
+    transition: 0.3s ease-in;
+}
+
+.fix-it{
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15),
     0px 5px 10px rgba(0, 0, 0, 0.05);
-
+    position: fixed;
+    background-color: var(--primaryColor);
 }
 
 .main-nav{
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    /* margin: 0 auto; */
+    padding: 0 10px;
 }
 
 .main-nav-elements {
     display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
-    margin: 0 0 0 auto;
+    padding: 0.2em 0;
+    margin: 0;
 }
 
 .main-nav-element {
-    margin: auto 1em;
     text-transform: uppercase;
+    display: flex;
+    margin: auto 0.5em;
 }
 
 .main-nav-element>a {
     color: var(--light);
     text-decoration: none;
-    padding: 0.5em 0;
+    padding: 1.8em 0.3em;
+    margin: -0.8em auto;
     font-weight: 600;
     font-family: var(--mainFont);
     transition: all 0.3s ease-in-out;
@@ -89,34 +102,27 @@ h2 {
     height: 2px;
     background-color: var(--thirdColor);
     left: 50%;
-    bottom: 0;
-    transition: all 0.4s ease-in-out;
+    bottom: 23px;
+    transition: all 0.5s ease-in-out;
 }
 
-.main-nav-element>a:hover::after {
+.main-nav-element>a:hover::after{
     width: 80%;
     left: 10%;
 }
 
 
-.main-nav-element>a:hover {
+.main-nav-element>a:hover{
     color: var(--thirdColor);
 }
 
-.main-nav-element:nth-child(2)>a::after {
+.main-nav-element .active::after, .stay-effect::after {
     width: 80%;
     left: 10%;
 }
 
-.main-nav-element:nth-child(2)>a {
+.main-nav-element .active {
     color: var(--thirdColor);
-}
-
-.main-nav-logo {
-    height: 5em;
-    width: 6em;
-    display: flex;
-    align-items: center;
 }
 
 .main-nav-element-hover {
@@ -130,7 +136,7 @@ h2 {
     position: absolute;
     list-style: none;
     background-color: var(--primaryColor);
-    top: 20px;
+    top: 55px;
     left: 0;
     padding: 0;
     width: max-content;
@@ -144,8 +150,7 @@ h2 {
     color: var(--thirdColor);
 }
 
-.sub-nav-element {
-    padding: 15px 10px;
+.sub-nav-element{
     display: flex;
     justify-content: center;
 }
@@ -156,11 +161,11 @@ h2 {
     position: relative;
     font-weight: 600;
     font-family: var(--mainFont);
-
+    padding: 15px 10px;
 }
 
 .sub-nav-element>a::after {
-    bottom: -8px;
+    bottom: 10px;
 }
 
 .sub-nav-element>a:hover::after {
@@ -172,94 +177,108 @@ h2 {
     color: var(--thirdColor);
 }
 
-.main-nav-logo img {
+.main-nav-logo{
+    height: 56px;
+}
+
+.main-nav-logo>img {
     width: 100%;
     height: 100%;
 }
 
 .main-nav .reg-button {
-    width: 12rem;
-    height: 50%;
-    margin: AUTO 1em;
+    padding: 0.5em 1.5em;
     border-radius: 100PX;
     background-color: var(--thirdColor);
     transition: all 0.4s ease-in-out;
     font-size: 1.2em;
-    border: none;
+    border: 0.1em solid var(--thirdColor);
     text-transform: uppercase;
     font-family: var(--mainFont);
     font-weight: 600;
     color: var(--light);
+    margin: auto 0 auto 0.3em;
+}
+
+.fas{
+    margin-left: 0.5em;
 }
 
 .main-nav .reg-button:hover {
-    border: 0.1em solid var(--thirdColor);
     background-color: transparent;
     color: var(--thirdColor);
     box-shadow: 0px -0.03em 0.33em var(--thirdColor);
     cursor: pointer;
 }
- /* -------------------------------------WHO--------------------------------------    */
- section{
+
+/* -------------------------------------WHO--------------------------------------    */
+section {
     width: 100%;
     padding: 5.9% var(--sidePadding) 0 var(--sidePadding);
     background-color: var(--primaryColor);
 }
 
-.Who-container{
+.who {
     width: 100%;
-    display: flex;
-    height: 100%;
-    position: relative;
-}
-
-.Who-container::after{
-    content: "";
-    width: 55%;
-    height: 93%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: var(--secondaryColor);
-    box-shadow: 20px -20px 0 var(--primaryColor),
-                30px -30px 0 var(--primaryColorAlt);
-}
-
-.left-container{   
-    width: 55%;
-    background-color: var(--light);
-    height: 100%;
-    position: relative;
-}
-
-.right-container{
-    width: 45%;
-    background-color: var(--light);
-    height: 100%;
-}
-
-.left-container-img{
-    position: absolute;
-    left: 10%;
-    bottom: 0;
-    width: 110%;
-    height: 65%;
-    z-index: 2;
-}
-
-
-
-.MC-Bday{
-    height: 100%;
-    width: 100%;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-}
-/* -----------------------------History---------------------- */
-#History{
+    height: 100vh;
     padding: 0 var(--sidePadding);
 }
-.history-container{
+
+.Who-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--background);
+}
+
+.Who-container .left-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+}
+
+.Who-container .left-container .left-container-img {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    box-shadow: 5px 0 0 var(--thirdColorAlt);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.Who-container .left-container .left-container-img img {
+    width: 719px;
+    height: 801px;
+}
+
+.Who-container .right-container {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primaryColorAlt);
+}
+
+.Who-container .right-container p {
+    margin: 0 0px 30px 10px;
+    width: auto;
+    color: var(--background);
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+
+
+
+/* -----------------------------History---------------------- */
+#History {
+    padding: 0 var(--sidePadding);
+}
+
+.history-container {
     width: 100%;
     height: 100%;
     background-color: var(--primaryColor);
@@ -270,12 +289,12 @@ h2 {
     position: relative;
 }
 
-.history-container h2{
+.history-container h2, .act h2 {
     margin: 50px 0;
     position: relative;
 }
 
-.history-container h2::after{
+.history-container h2::after, .act h2::after {
     content: "";
     position: absolute;
     left: 0;
@@ -286,16 +305,28 @@ h2 {
     background-color: var(--background);
 }
 
-.H-border{
+.H-border {
     padding: 3%;
     width: 60%;
     height: 70%;
     text-align: center;
+    /* border: 3px solid #d33b8b; */
+    margin: 80px 0;
+    border-radius: 5px;
+    box-shadow: var(--secondaryColor) 0px 0px 0px 2px,
+                var(--primaryColor) 10px -10px 0px -3px, 
+                var(--thirdColor) 10px -10px,
+                var(--primaryColor) 20px -20px 0px -3px,
+                rgb(255, 217, 19) 20px -20px,
+                var(--primaryColor) 30px -30px 0px -3px,
+                rgb(255, 156, 85) 30px -30px,
+                var(--primaryColor) 40px -40px 0px -3px,
+                rgb(255, 85, 85) 40px -40px;
 }
 
-.H-border p{
+.H-border p {
     margin: 0;
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
     color: var(--background);
     font-size: 0.9em;
     line-height: 1.3em;
@@ -305,12 +336,17 @@ h2 {
 
 
 /* ----------------------Activities--------------------- */
-#Activities{
+#Activities {
     padding: 0 var(--sidePadding);
+    height: 90vh;
 }
 
-.active-container{
+.active-container {
     width: 100%;
-    height: 100%;
-    background-color: var(--background);
+    background-color: var(--primaryColor);
+}
+
+.act h2{
+    margin: 0;
+    width: fit-content;
 }
