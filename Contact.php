@@ -44,15 +44,13 @@
                         if(isset($_GET['error']))
                         {
                             $msg = 'please fill in the blanks';
-                            echo '<div class="alert alert-danger">'.$msg.'</div>';
+                            echo '<div class="alert-fail"><h3>'.$msg.'</h3></div>';
                         }
                         if(isset($_GET['seccuss']))
                         {
                             $msg = 'your message is sent';
-                            echo '<div class="alert alert-danger">'.$msg.'</div>';
+                            echo '<div class="alert-seccuss">'.$msg.'</div>';
                         }
-                        
-                    
                     ?>         
             </div>
             <div class="form-container">
@@ -67,6 +65,5 @@
         </div>        
     </section>
     <script src="script.js"></script>
-
 </body>
 </html>
