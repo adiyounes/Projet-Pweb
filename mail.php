@@ -23,7 +23,4 @@ else
 {
     header('location:contact.php');
 }
-
-
-
 ?>
