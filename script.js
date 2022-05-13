@@ -21,12 +21,12 @@ var h=`<div class="main-nav">
         </ul>
     </li>
     <li class="main-nav-element">
-        <a href="Events.html" class="nav-page">Evènements</a>
+        <a href="Events.php" class="nav-page">Evènements</a>
     </li>
     <li class="main-nav-element">
-        <a href="Contact.html" class="nav-page">Contact</a>
+        <a href="Contact.php" class="nav-page">Contact</a>
     </li>
-    <button class="reg-button">S'inscrire<i class="fas fa-arrow-right"></i></button>
+    <a href="" class="reg-button">S'inscrire<i class="fas fa-arrow-right"></i></a>
 </ul>
 </div>
 `
