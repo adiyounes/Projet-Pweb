@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Presentation.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <title>Presentation</title>
 </head>
 
 <body>
@@ -118,27 +118,5 @@
         </section>
     </main>
     <script src="script.js"></script>
-    </script>
-    <script>
-        let x=document.getElementById("navbar");
-    let z=document.getElementById("sub-nav-elements");
-    let y=0;
-    window.addEventListener("scroll",(e)=>{
-        a=document.documentElement.scrollTop
-        if(a>1){
-            x.style.position="fixed"
-        }
-        if(a>"500" && y==0){
-            x.className+=" fix-it"
-            z.className+=" fix-sub"
-            y++
-        }
-        if(a<"500" && y==1){
-            x.className="navbar"
-            z.className="sub-nav-elements"
-            y--;
-        }
-     })
-    </script>
 </body>
 </html>

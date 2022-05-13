@@ -1,100 +1,3 @@
-// const slideContainer= document.querySelector('.slides-container');
-// const slide = document.querySelector('.slides');
-// const nextBtn = document.getElementById('next-btn');
-// const prevBtn = document.getElementById('prev-btn');
-// const interval = 6000;
-
-// let slides = document.querySelectorAll('.slide');
-// let index = 1;
-// let intervalID;
-
-// const firstClone =slides[0].cloneNode(true);
-// const lastClone =slides[slides.length-1].cloneNode(true);
-
-// firstClone.id = 'first-clone';
-// lastClone.id = 'last-clone';
-// slide.append(firstClone);
-// slide.prepend(lastClone);
-
-// const slideWidth = slides[index].clientWidth;
-
-// slide.style.transform = `translateX(${-slideWidth * index}px)`;
-
-// const startSlide = ()=>{
-//     intervalID=setInterval(()=>{
-//         index++;
-//         slide.style.transform = `translateX(${-slideWidth * index}px)`;
-//         slide.style.transition = `.7s`;
-//     },interval )
-// };
-// console.log(intervalID);
-// slide.addEventListener('transitionend',()=>{
-//     let slides = document.querySelectorAll('.slide');
-//     if(slides[index].id === firstClone.id){
-//         slide.style.transition = 'none';
-//         index=1;
-//         slide.style.transform = `translateX(${-slideWidth * index}px)`;
-//     }
-// });
-
-// slide.addEventListener('mouseenter',()=>{
-//     clearInterval(intervalID);
-// });
-// slide.addEventListener('mouseleave',()=>{
-//     startSlide();
-// })
-
-
-// startSlide();
-
-
-// // -------------------------------------------------
-// nextBtn.addEventListener('mouseenter',()=>{
-//     clearInterval(intervalID);
-// });
-// nextBtn.addEventListener('mouseleave',()=>{
-//     startSlide();
-// })
-
-// prevBtn.addEventListener('mouseenter',()=>{
-//     clearInterval(intervalID);
-// })
-// prevBtn.addEventListener('mouseleave',()=>{
-//     startSlide();
-// })
-
-// nextBtn.addEventListener('click',()=>{
-//     let slides = document.querySelectorAll('.slide');
-//     if(slides[index].id === firstClone.id){
-//         slide.style.transition = 'none';
-//         index=1;
-//         slide.style.transform = `translateX(${-slideWidth * index}px)`;
-//     }else{
-//         index++;
-//         slide.style.transform = `translateX(${-slideWidth * index}px)`;
-//         slide.style.transition = `.7s`;
-//     }
-// })
-
-// prevBtn.addEventListener('click',()=>{
-//     let slides=document.querySelectorAll('.slide');
-//     if(slides[index].id === 'last-clone'){
-//         slide.style.transition='none';
-//         index=slides.length-1;
-//         slide.style.transform=`translateX(${slideWidth * index}px)`;
-//     }else{
-//         index--;
-//         slide.style.transform=`translateX(${slideWidth * index}px)`
-//         slide.style.transition='.7s';
-//     }
-// });
-// -----------------------------------------------------------------------
-// -----------------------------------------------------------------
-// const w=document.querySelectorAll('.nav-page');
-// w[1].addEventListener('click',()=>{
-//     w[1].style.color='red';
-// })
-
 var h=`<div class="main-nav">
 <a href="#acceuil" class="main-nav-logo active">
     <img src="Logos/MC-logo-light.svg" alt="" width="0" height="0">
@@ -121,7 +24,7 @@ var h=`<div class="main-nav">
         <a href="Events.html" class="nav-page">Evènements</a>
     </li>
     <li class="main-nav-element">
-        <a href="Contact.css" class="nav-page">Contact</a>
+        <a href="Contact.html" class="nav-page">Contact</a>
     </li>
     <button class="reg-button">S'inscrire<i class="fas fa-arrow-right"></i></button>
 </ul>
@@ -129,9 +32,9 @@ var h=`<div class="main-nav">
 `
 document.getElementById("navbar").insertAdjacentHTML("afterbegin",h);
 
-    let x=document.getElementById("navbar");
-    let z=document.getElementById("sub-nav-elements");
-    let y=0;
+let x=document.getElementById("navbar");
+let z=document.getElementById("sub-nav-elements");
+let y=0;
     window.addEventListener("scroll",(e)=>{
         a=document.documentElement.scrollTop
         if(a>1){

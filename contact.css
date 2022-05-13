@@ -1,0 +1,51 @@
+@import "style.css";
+
+
+.contact-container{
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contact-container .social{
+    height: 70%;
+    width: 20%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-container .social a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-container .facebook img{
+    height: 100%;
+    width: 130%;
+}
+
+
+
+.contact-container .instagram img{
+    height:  100%;
+    width: 67%;
+}
+
+.contact-container .linkedin img{
+    height: 100%;
+    width: 61%;
+}
+
+.contact-container .social img{
+    transition: .2s ease-in-out;
+}
+
+.contact-container .social img:hover{
+    transform: scale(1.2);
+
+}
