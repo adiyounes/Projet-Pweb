@@ -4,16 +4,20 @@ if(isset($_POST["btn-send"])){
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $message = $_POST["message"];
-    $subject = "hell to you";
-
+    $subject = "email from website";
+    
     if(empty($name) ||empty($email) ||empty($phone) ||empty($message))
     {
         header('location:contact.php?error');
     }
     else
-    {
+    {   
+        
         $to = "younesadi18@gmail.com";
-        if(mail($to,$subject,$message,$email))
+        ini_set('SMTP','myserver');
+        ini_set('smtp_port',25);
+        
+        if(mail($to,$subject,$message))
         {
             header('location:contact.php?seccuss');
         }

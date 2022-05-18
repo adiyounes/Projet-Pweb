@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+
 <html lang="en">
 
 <head>
@@ -7,27 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="events.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Events</title>
 </head>
 
 <body>
-    <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "db";
-    
-        $connect = new mysqli($servername, $username, $password,$database);
-        
-        if($connect){}
-        else
-        {
-            die ("connect failed: %s \n".$connect -> error);
-        }
-        $query="SELECT eventdesc FROM events";
-        $result=mysqli_query($connect, $query);
-        if(mysqli_num_rows($result)>0)
+    <nav id="navbar" class="navbar">
+        <?php
+            include 'nav.php';
+        ?>
+    </nav>
+<?php
+    include 'dbconnect.php';
+    if(mysqli_num_rows($result)>0)
         {   
             $description=array();
             while($row = mysqli_fetch_array($result)){

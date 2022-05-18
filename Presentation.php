@@ -12,14 +12,16 @@
 </head>
 
 <body>
-    <div id="navbar" class="navbar"></div>
+    <nav id="navbar" class="navbar">
+        <?php
+            include 'nav.php';
+        ?>
+    </nav>
     <main>
         <section id="Who" class="who">
-            <div class="Who-container">
-                <div class="left-container">
-                    
-                </div>
-                <div class="right-container">
+                    <h2>
+                        Qui Somme Nous ?
+                    </h2>
                     <p>
                         Créé en 1985 à l’USTHB, Micro Club est le premier club scientifique
 
@@ -28,8 +30,6 @@
 
                         de formations ciblées et d’évènements.
                     </p>
-                </div>
-            </div>
         </section>
         <section id="History">
             <div class="history-container">
@@ -115,6 +115,6 @@
             </div>
         </section>
     </main>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>

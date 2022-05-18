@@ -10,7 +10,11 @@
     <title>Contact</title>
 </head>
 <body>
-    <nav id="navbar" class="navbar"></nav>
+    <nav id="navbar" class="navbar">
+        <?php
+            include 'nav.php';
+        ?>
+    </nav>
     <section id="contact">
         <div class="visiteus">
             <div>
@@ -65,7 +69,7 @@
             </div>
         </div>        
     </section>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 
 </body>
 </html>

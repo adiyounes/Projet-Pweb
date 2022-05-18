@@ -52,29 +52,18 @@ section {
 .who {
     width: 100%;
     height: 100vh;
-    padding: 0 var(--sidePadding);
-}
-
-.Who-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--background);
-}
-
-.Who-container .left-container {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    background-image: url(images/MC-Bday.jpg);
+    padding: 0;
+    background-image: url(images/Who-are-we.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.Who-container .left-container::before{
+.who::before{
     content: "";
     background: var(--gradient);
     width: 100%;
@@ -83,32 +72,40 @@ section {
     position: absolute;
 }
 
-
-.Who-container .right-container {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.who h2{
+    z-index: 3;
+    width: 5ch;
+    vertical-align: middle;
+    text-align: center;
     position: relative;
-    background-color: var(--primaryColorAlt);
 }
 
-.Who-container .right-container::before{
+.who h2::before{
     content: "";
-    width: 4px;
-    height: 100%;
     position: absolute;
-    left: 0;
-    top: 0;
-    background-color: var(--thirdColor);
+    height: 4px;
+    width: 67%;
+    background-color: #d045a7;
+    left: 23PX;
+    top: -25px;
 }
 
-.Who-container .right-container p {
-    margin: 0 0px 30px 10px;
-    width: auto;
-    color: var(--background);
-    font-size: 1.2em;
-    line-height: 1.6em;
+.who p{    
+    z-index: 3;
+    color: var(--light);
+    width: 30ch;
+    margin-left: 240px;
+    position: relative;
+}
+
+.who p::before{
+    content: "";
+    position: absolute;
+    height: 87%;
+    width: 1px;
+    background-color: var(--light);
+    left: -14PX;
+    top: 10px;
 }
 
 

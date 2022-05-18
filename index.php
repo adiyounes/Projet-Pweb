@@ -13,7 +13,9 @@
 
 <body>
     <nav id="navbar" class="navbar">
-        
+        <?php
+            include 'nav.php';
+        ?>
     </nav>
     <main>
         <section id="Welcome">
@@ -889,7 +891,7 @@
             </div>
         </section>
     </main>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>
