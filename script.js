@@ -1,90 +1,49 @@
-const slideContainer= document.querySelector('.slides-container');
-const slide = document.querySelector('.slides');
-const nextBtn = document.getElementById('next-btn');
-const prevBtn = document.getElementById('prev-btn');
-const interval = 6000;
+consol.log("hello");
+const slideContainer= document.querySelector('.wrapper');
+const slide = document.querySelector('.s-slides');
+const interval = 2000;
 
-let slides = document.querySelectorAll('.slide');
+let slides = document.querySelectorAll('.s-slide');
 let index = 1;
-let intervalID;
-
 const firstClone =slides[0].cloneNode(true);
+const secondClone =slides[1].cloneNode(true);
+const thirdClone =slides[2].cloneNode(true);
+const fourthClone =slides[3].cloneNode(true);
+
 const lastClone =slides[slides.length-1].cloneNode(true);
 
-firstClone.id = 'first-clone';
-lastClone.id = 'last-clone';
+firstClone.id='firstClone';
+lastClone.id='lastClone';
+secondClone.id='secondClone';
+thirdClone.id='thirdClone';
+fourthClone.id='fourthClone';
+
 slide.append(firstClone);
+slide.append(secondClone);
+slide.append(thirdClone);
+slide.append(fourthClone);
 slide.prepend(lastClone);
 
-const slideWidth = slides[index].clientWidth;
+const slideWidth = slides[index].clientWidth +110;
 
 slide.style.transform = `translateX(${-slideWidth * index}px)`;
 
 const startSlide = ()=>{
-    intervalID=setInterval(()=>{
+    setInterval(()=>{
         index++;
-        slide.style.transform = `translateX(${-slideWidth * index}px)`;
-        slide.style.transition = `.7s`;
-    },interval )
-};
-console.log(intervalID);
+        slide.style.transform = `translateX(${-slideWidth * index}px)`;  
+        slide.style.transition = '0.7s';
+    },interval)
+}
+
 slide.addEventListener('transitionend',()=>{
-    let slides = document.querySelectorAll('.slide');
+    let slides = document.querySelectorAll('.s-slide');
     if(slides[index].id === firstClone.id){
+        console.log(firstClone.id);
         slide.style.transition = 'none';
-        index=1;
+        index = 1;
         slide.style.transform = `translateX(${-slideWidth * index}px)`;
     }
-});
-
-slide.addEventListener('mouseenter',()=>{
-    clearInterval(intervalID);
-});
-slide.addEventListener('mouseleave',()=>{
-    startSlide();
 })
-
 
 startSlide();
-
-
-// -------------------------------------------------
-nextBtn.addEventListener('mouseenter',()=>{
-    clearInterval(intervalID);
-});
-nextBtn.addEventListener('mouseleave',()=>{
-    startSlide();
-})
-
-prevBtn.addEventListener('mouseenter',()=>{
-    clearInterval(intervalID);
-})
-prevBtn.addEventListener('mouseleave',()=>{
-    startSlide();
-})
-
-// nextBtn.addEventListener('click',()=>{
-//     let slides = document.querySelectorAll('.slide');
-//     if(slides[index].id === firstClone.id){
-//         slide.style.transition = 'none';
-//         index=1;
-//         slide.style.transform = `translateX(${-slideWidth * index}px)`;
-//     }else{
-//         index++;
-//         slide.style.transform = `translateX(${-slideWidth * index}px)`;
-//         slide.style.transition = `.7s`;
-//     }
-// })
-
-// prevBtn.addEventListener('click',()=>{
-//     let slides=document.querySelectorAll('.slide');
-//     if(slides[index].id === 'last-clone'){
-//         slide.style.transition='none';
-//         index=slides.length-1;
-//         slide.style.transform=`translateX(${slideWidth * index}px)`;
-//     }else{
-//         index--;
-//         slide.style.transform=`translateX(${slideWidth * index}px)`
-//         slide.style.transition='.7s';
-//     }
-// });

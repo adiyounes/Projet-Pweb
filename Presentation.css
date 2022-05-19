@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Mitr:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "../style.css";
 
 :root {
-    --sidePadding: 12%;
-    --primaryColor: #292750;
+    --sidePadding: 8%;
+    --primaryColor: rgb(41, 39, 80);
     --secondaryColor: #9bd0ba;
     --thirdColor: #ff60ce;
-    --thirdColorAlt: #d33b8b;
+    --thirdColorAlt: #d045a7;
     --grey: #9b9eac;
     --light: #fff;
-    --dark: #0a0a0a;
+    --dark: #1f1f1f;
     --background: #fff;
     --mainFont: 'barlow', sans-serif;
     --secondaryFont: 'prompt', sans-serif;
     --primaryColorAlt: #64637a;
+    --gradient: linear-gradient(to bottom, #0b001698 0%, #0b0016c2 74%, #0b0016 100%);
 }
 
 * {
@@ -40,178 +42,6 @@ h2 {
     color: var(--light);
     font-size: 3em;
 }
-
-/* ---------------------------------------NAV-BAR----------------- */
-.navbar {
-    background-color: var(--primaryColor);
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: 0.8em 0;
-    transition: 0.3s ease-in;
-}
-
-.fix-it {
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15),
-        0px 5px 10px rgba(0, 0, 0, 0.05);
-    position: fixed;
-    background-color: var(--primaryColor);
-}
-
-.main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /* margin: 0 auto; */
-    padding: 0 10px;
-}
-
-.main-nav-elements {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0.2em 0;
-    margin: 0;
-}
-
-.main-nav-element {
-    text-transform: uppercase;
-    display: flex;
-    margin: auto 0.5em;
-}
-
-.main-nav-element>a {
-    color: var(--light);
-    text-decoration: none;
-    padding: 1.8em 0.3em;
-    margin: -0.8em auto;
-    font-weight: 600;
-    font-family: var(--mainFont);
-    transition: all 0.3s ease-in-out;
-    position: relative;
-}
-
-.main-nav-element>a::after,
-.sub-nav-element>a::after {
-    position: absolute;
-    content: "";
-    width: 0%;
-    height: 2px;
-    background-color: var(--thirdColor);
-    left: 50%;
-    bottom: 23px;
-    transition: all 0.5s ease-in-out;
-}
-
-.main-nav-element>a:hover::after {
-    width: 80%;
-    left: 10%;
-}
-
-
-.main-nav-element>a:hover {
-    color: var(--thirdColor);
-}
-
-.main-nav-element .active::after,
-.stay-effect::after {
-    width: 80%;
-    left: 10%;
-}
-
-.main-nav-element .active {
-    color: var(--thirdColor);
-}
-
-.main-nav-element-hover {
-    position: relative;
-}
-
-.sub-nav-elements {
-    display: flex;
-    flex-direction: column;
-    visibility: hidden;
-    position: absolute;
-    list-style: none;
-    background-color: var(--primaryColor);
-    top: 55px;
-    left: 0;
-    padding: 0;
-    width: max-content;
-}
-
-.main-nav-element-hover:hover .sub-nav-elements {
-    visibility: visible;
-}
-
-.sub-nav-elements:hover .main-nav-element-hover {
-    color: var(--thirdColor);
-}
-
-.sub-nav-element {
-    display: flex;
-    justify-content: center;
-}
-
-.sub-nav-element>a {
-    text-decoration: none;
-    color: var(--light);
-    position: relative;
-    font-weight: 600;
-    font-family: var(--mainFont);
-    padding: 15px 10px;
-}
-
-.sub-nav-element>a::after {
-    bottom: 10px;
-}
-
-.sub-nav-element>a:hover::after {
-    width: 80%;
-    left: 10%;
-}
-
-.sub-nav-element>a:hover {
-    color: var(--thirdColor);
-}
-
-.main-nav-logo {
-    height: 56px;
-}
-
-.main-nav-logo>img {
-    width: 100%;
-    height: 100%;
-}
-
-.main-nav .reg-button {
-    padding: 0.5em 1.5em;
-    border-radius: 100PX;
-    background-color: var(--thirdColor);
-    transition: all 0.4s ease-in-out;
-    font-size: 1.2em;
-    border: 0.1em solid var(--thirdColor);
-    text-transform: uppercase;
-    font-family: var(--mainFont);
-    font-weight: 600;
-    color: var(--light);
-    margin: auto 0 auto 0.3em;
-}
-
-.fas {
-    margin-left: 0.5em;
-}
-
-.main-nav .reg-button:hover {
-    background-color: transparent;
-    color: var(--thirdColor);
-    box-shadow: 0px -0.03em 0.33em var(--thirdColor);
-    cursor: pointer;
-}
-
 /* -------------------------------------WHO--------------------------------------    */
 section {
     width: 100%;
@@ -222,53 +52,60 @@ section {
 .who {
     width: 100%;
     height: 100vh;
-    padding: 0 var(--sidePadding);
-}
-
-.Who-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--background);
-}
-
-.Who-container .left-container {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-
-}
-
-.Who-container .left-container .left-container-img {
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    box-shadow: 5px 0 0 var(--thirdColorAlt);
-    z-index: 2;
-    overflow: hidden;
-}
-
-.Who-container .left-container .left-container-img img {
-    width: 719px;
-    height: 801px;
-}
-
-.Who-container .right-container {
-    width: 30%;
+    padding: 0;
+    background-image: url(images/Who-are-we.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primaryColorAlt);
+    flex-direction: column;
 }
 
-.Who-container .right-container p {
-    margin: 0 0px 30px 10px;
-    width: auto;
-    color: var(--background);
-    font-size: 1em;
-    line-height: 1.6em;
+.who::before{
+    content: "";
+    background: var(--gradient);
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.who h2{
+    z-index: 3;
+    width: 5ch;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+
+.who h2::before{
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 67%;
+    background-color: #d045a7;
+    left: 23PX;
+    top: -25px;
+}
+
+.who p{    
+    z-index: 3;
+    color: var(--light);
+    width: 30ch;
+    margin-left: 240px;
+    position: relative;
+}
+
+.who p::before{
+    content: "";
+    position: absolute;
+    height: 87%;
+    width: 1px;
+    background-color: var(--light);
+    left: -14PX;
+    top: 10px;
 }
 
 
@@ -310,7 +147,6 @@ section {
 .H-border {
     padding: 3%;
     width: 60%;
-    height: 70%;
     text-align: center;
     /* border: 3px solid #d33b8b; */
     margin: 80px 0;
@@ -468,7 +304,7 @@ section {
 }
 
 .act .act-title h2 {
-    color: var(--thirdColorAlt);
+    color: var(--primaryColor);
     font-size: 2em;
     margin: 0.5em;
     position: relative;

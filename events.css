@@ -1,0 +1,435 @@
+@import "style.css";
+
+body{
+    background-color: var(--primaryColor);
+}
+
+section{
+    padding: 0;
+}
+
+.MCTF-container, .Red-Hat-container, .AGC-container,.alg-dis-container, .winter-hacks{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    width: 12ch;
+    font-size: 2.2em;
+    text-transform: capitalize;
+    margin-left: 20px;
+}
+
+h4{
+    text-transform: capitalize;
+    font-style: var(--mainFontt);
+    color: var(--light);
+    margin-left: 20px;
+}
+
+p{
+    color: var(--primaryColor);
+    width: 40ch;
+}
+/* -----------------------------------RED HAT-------------------------- */
+.Red-Hat-container{
+    background-image: url(images/Red-hat-background.jpg);
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Red-Hat-container::before{
+    content: "";
+    background: var(--gradient);
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+}
+
+
+.Red-Hat-container .left-container{
+    width:43%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+    padding: 140px 0;
+    z-index: 2;
+}
+
+.Red-Hat-container .left-container .logo-container{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.Red-Hat-container .left-container .logo-container .image-container{
+    width: 20%;
+    height: 100%;
+}
+
+.Red-Hat-container .left-container .logo-container .image-container img{
+    width: 100%;
+    height: 100%;
+}
+
+.Red-Hat-container .left-container .logo-container .txt-container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Red-Hat-container .left-container .logo-container .txt-container h2{
+    width: 12ch;
+    font-size: 2.2em;
+    text-transform: capitalize;
+    margin-left: 20px;
+}
+
+.Red-Hat-container .right-container{
+    width:43%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+    flex-direction: column;
+    padding-bottom: 70px;
+    height: 100%;
+    z-index: 2;
+}
+
+.Red-Hat-container .right-container h2{
+    font-size: 2.2em;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.Red-Hat-container .right-container p{
+    color: var(--background);
+    width: 61ch;
+}
+/* ---------------------------------MCTF---------------------------- */
+.MCTF-container{
+    width: 80%;
+    position: relative;
+    margin: auto;
+}
+
+.MCTF-container::before{
+    content: "";
+    width: 132.5%;
+    position: absolute;
+    left: -20%;
+    bottom: 10%;
+    height: 4px;
+    background-color: var(--thirdColorAlt);
+}
+
+.MCTF-container .left-container{
+    width:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.MCTF-container .left-container .logo-container{
+    padding: 5%;
+    border-radius: 50%;
+    width: 50%;
+    height: 33%;
+    overflow: hidden;
+    background-color: rgb(144, 141, 141);
+}
+
+.MCTF-container .left-container .logo-container img{
+    width: 100%;
+    height: 100%;
+}
+
+.MCTF-container .right-container{
+    background-color: var(--background);
+    height: 100%;
+    width: 50%;
+    padding: 8em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.MCTF-container .right-container .title-container{
+    width: auto;
+    
+}
+
+.MCTF-container h4{
+    color: var(--thirdColorAlt);
+}
+
+.MCTF-container .right-container .title-container h2{
+    color: var(--thirdColorAlt);
+    text-transform: capitalize;
+    width: 14ch;
+    font-size: 2.3em;
+    margin-bottom: 30px;
+}
+
+.MCTF-container .right-container .text-container p{
+    color: var(--primaryColor);
+    width: 40ch;
+}
+
+/* ------------------------------------AGC---------------------------- */
+
+.AGC-container{
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.AGC-container .up-container{
+    height: 60%;
+    width: 100%;
+    background-image: url(images/MC-Bday.jpg);
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.AGC-container .up-container::before{
+    content: "";
+    background: var(--gradient);
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.AGC-container .up-container .title-container{
+    width: 25%;
+    height: 100%;
+    margin-left: 7%;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.AGC-container .up-container .title-container h2{
+    width: 13ch;
+}
+
+.AGC-container h4{
+    margin-left: 20px;
+}
+
+.AGC-container .up-container .logo-container{
+    width: 25%;
+    height: 100%;
+    margin-left: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.AGC-container .up-container .logo-container img{
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.AGC-container .down-container{
+    width: 100%;
+    height: 40%;
+    background-color: var(--secondaryColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.AGC-container .down-container .left{
+    height: 100%;
+    width: 50%;
+    padding: 5px 0 0 70px;
+}
+
+.AGC-container .down-container .left p{
+    width: 52ch;
+    margin: 41px 0;
+}
+
+.AGC-container .down-container .right{
+    height: 100%;
+    width: 50%;
+    padding: 5px 0 0 70px;
+}
+
+.AGC-container .down-container .right h3{
+    margin: 0;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    color: #37364a;
+}
+
+.AGC-container .down-container .right p{
+    line-height: 1em;
+    margin: 13px 0px;
+}
+
+.AGC-container .down-container .right ul{
+    line-height: 1em;
+    list-style: none;
+}
+/* ---------------------------ALG dis----------------------------------- */
+.alg-dis-container{
+    background-image: url(images/alg-dis.jpeg);
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alg-dis-container::before{
+    content: "";
+    background: var(--gradient);
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.alg-dis-container .left-container{
+    width:43%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 80px 0;
+    z-index: 2;
+}
+
+.alg-dis-container .left-container .logo-container{
+    height: 13%;
+    width: 54%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.alg-dis-container .left-container .logo-container img{
+    height: 100%;
+    width: 100%;
+}
+
+.alg-dis-container .left-container .logo-container .txt-container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.alg-dis-container .left-container .txt-container h2{
+    width: 15ch;
+    font-size: 2.2em;
+    text-transform: capitalize;
+    margin-left: 0px;
+}
+
+.alg-dis-container .right-container{
+    width:43%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding:70px 0 ;
+    height: 100%;
+    z-index: 2;
+}
+
+.alg-dis-container .right-container .logo-container h2{
+    font-size: 4.2em;
+}
+
+.alg-dis-container .right-container h2{
+    font-size: 2.2em;
+    margin: 0;
+    text-transform: capitalize;
+}
+.alg-dis-container .txt-container{
+    background-color: rgb(122, 175, 153);
+    padding:10px;
+}
+.alg-dis-container .right-container p, .alg-dis-container .left-container p{
+    color: var(--background);
+    width: 35ch;
+}
+/* ---------------------------------------winter-hacks--------------------------------- */
+.winter-hacks{
+    background-image: url(images/Winterhack.JPG);
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winter-hacks::before{
+    content: "";
+    background: var(--gradient);
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.winter-hacks h2{
+    z-index: 3;
+    font-size: 3em;
+    box-shadow:0px 5px 0 var(--thirdColorAlt)
+}
+
+.winter-hacks p{
+    z-index: 3;
+    padding: 20px;
+    background-color: rgb(122, 175, 153);
+    color: var(--background);
+    box-shadow: 5px 5px 0 var(--thirdColorAlt),-5px -5px 0 var(--thirdColorAlt);
+}
+
+.winter{
+    z-index: 3;
+}
+
+.winter h4{
+    margin-left: 20px;
+}

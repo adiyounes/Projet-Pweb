@@ -6,52 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Presentation.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <title>Presentation</title>
 </head>
 
 <body>
     <nav id="navbar" class="navbar">
-        <div class="main-nav">
-            <a href="#acceuil" class="main-nav-logo">
-                <img src="../Logos/MC-logo-light.svg" alt="">
-            </a>
-            <ul class="main-nav-elements">
-                <li class="main-nav-element">
-                    <a href="../index.html">Accueil</a>
-                </li>
-                <li class="main-nav-element main-nav-element-hover">
-                    <a href="../Presentation/Presentation.html" class="h">Présentation</a>
-                    <ul class="sub-nav-elements">
-                        <li class="sub-nav-element">
-                            <a href="#Who">qui sommes nous</a>
-                        </li>
-                        <li class="sub-nav-element">
-                            <a href="#History">historique du club</a>
-                        </li>
-                        <li class="sub-nav-element">
-                            <a href="#Activities">activités du club</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="main-nav-element">
-                    <a href="../Events/Events.html">Evènements</a>
-                </li>
-                <li class="main-nav-element">
-                    <a href="../Contact/Contact.html">Contact</a>
-                </li>
-                <button class="reg-button">S'inscrire<i class="fas fa-arrow-right"></i></button>
-            </ul>
-        </div>
+        <?php
+            include 'nav.php';
+        ?>
     </nav>
     <main>
         <section id="Who" class="who">
-            <div class="Who-container">
-                <div class="left-container">
-                    <div class="left-container-img">
-                        <img src="../images/MC-Bday.jpg" class="MC-Bday" alt="">
-                    </div>
-                </div>
-                <div class="right-container">
+                    <h2>
+                        Qui Somme Nous ?
+                    </h2>
                     <p>
                         Créé en 1985 à l’USTHB, Micro Club est le premier club scientifique
 
@@ -60,8 +30,6 @@
 
                         de formations ciblées et d’évènements.
                     </p>
-                </div>
-            </div>
         </section>
         <section id="History">
             <div class="history-container">
@@ -102,7 +70,7 @@
                 <div class="acts">
                     <div class="act">
                         <div class="act-img">
-                            <img src="../icons/event.png" alt="">
+                            <img src="icons/event.png" alt="">
                         </div>
                         <div class="act-title">
                             <h2>EVENTS</h2>
@@ -118,7 +86,7 @@
 
                     <div class="act middle-act">
                         <div class="act-img">
-                            <img src="../icons/project.png">
+                            <img src="icons/project.png">
                         </div>
                         <div class="act-title">
                             <h2>Projects</h2>
@@ -132,7 +100,7 @@
 
                     <div class="act">
                         <div class="act-img">
-                            <img src="../icons/workshops.png" alt="">
+                            <img src="icons/workshops.png" alt="">
                         </div>
                         <div class="act-title">
                             <h2>workshops</h2>
@@ -148,5 +116,4 @@
         </section>
     </main>
 </body>
-
 </html>
