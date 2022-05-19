@@ -1,3 +1,4 @@
+consol.log("hello");
 const slideContainer= document.querySelector('.wrapper');
 const slide = document.querySelector('.s-slides');
 const interval = 2000;
