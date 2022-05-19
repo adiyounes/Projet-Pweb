@@ -32,13 +32,13 @@ const startSlide = ()=>{
         index++;
         slide.style.transform = `translateX(${-slideWidth * index}px)`;  
         slide.style.transition = '0.7s';
-        console.log(2);
     },interval)
 }
 
 slide.addEventListener('transitionend',()=>{
     let slides = document.querySelectorAll('.s-slide');
     if(slides[index].id === firstClone.id){
+        console.log(firstClone.id);
         slide.style.transition = 'none';
         index = 1;
         slide.style.transform = `translateX(${-slideWidth * index}px)`;
