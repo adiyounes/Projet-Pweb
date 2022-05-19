@@ -1,10 +1,9 @@
-consol.log("hello");
 const slideContainer= document.querySelector('.wrapper');
 const slide = document.querySelector('.s-slides');
-const interval = 2000;
+const interval = 1000;
 
 let slides = document.querySelectorAll('.s-slide');
-let index = 1;
+let index = 0;
 const firstClone =slides[0].cloneNode(true);
 const secondClone =slides[1].cloneNode(true);
 const thirdClone =slides[2].cloneNode(true);
@@ -30,6 +29,7 @@ slide.style.transform = `translateX(${-slideWidth * index}px)`;
 
 const startSlide = ()=>{
     setInterval(()=>{
+        console.log(slides[index].id);
         index++;
         slide.style.transform = `translateX(${-slideWidth * index}px)`;  
         slide.style.transition = '0.7s';
@@ -38,10 +38,10 @@ const startSlide = ()=>{
 
 slide.addEventListener('transitionend',()=>{
     let slides = document.querySelectorAll('.s-slide');
-    if(slides[index].id === firstClone.id){
+    if(index == 8){
         console.log(firstClone.id);
         slide.style.transition = 'none';
-        index = 1;
+        index = 0;
         slide.style.transform = `translateX(${-slideWidth * index}px)`;
     }
 })
