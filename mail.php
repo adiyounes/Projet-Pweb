@@ -8,7 +8,7 @@ if(isset($_POST["btn-send"])){
     
     if(empty($name) ||empty($email) ||empty($phone) ||empty($message))
     {
-        header('location:contact.php?error');
+        header('location:contact.php?error#send');
     }
     else
     {   
@@ -19,7 +19,7 @@ if(isset($_POST["btn-send"])){
         
         if(mail($to,$subject,$message))
         {
-            header('location:contact.php?seccuss');
+            header('location:contact.php?seccuss#send');
         }
     }
 }

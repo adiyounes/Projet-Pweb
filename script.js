@@ -1,23 +1,48 @@
+const slideContainer= document.querySelector('.wrapper');
+const slide = document.querySelector('.s-slides');
+const interval = 2000;
 
+let slides = document.querySelectorAll('.s-slide');
+let index = 1;
+const firstClone =slides[0].cloneNode(true);
+const secondClone =slides[1].cloneNode(true);
+const thirdClone =slides[2].cloneNode(true);
+const fourthClone =slides[3].cloneNode(true);
 
-document.getElementById("navbar").insertAdjacentHTML("afterbegin",h);
+const lastClone =slides[slides.length-1].cloneNode(true);
 
-let x=document.getElementById("navbar");
-let z=document.getElementById("sub-nav-elements");
-let y=0;
-    window.addEventListener("scroll",(e)=>{
-        a=document.documentElement.scrollTop
-        if(a>1){
-            x.style.position="fixed"
-        }
-        if(a>"500" && y==0){
-            x.className+=" fix-it"
-            z.className+=" fix-sub"
-            y++
-        }
-        if(a<"500" && y==1){
-            x.className="navbar"
-            z.className="sub-nav-elements"
-            y--;
-        }
-     })
+firstClone.id='firstClone';
+lastClone.id='lastClone';
+secondClone.id='secondClone';
+thirdClone.id='thirdClone';
+fourthClone.id='fourthClone';
+
+slide.append(firstClone);
+slide.append(secondClone);
+slide.append(thirdClone);
+slide.append(fourthClone);
+slide.prepend(lastClone);
+
+const slideWidth = slides[index].clientWidth +110;
+
+slide.style.transform = `translateX(${-slideWidth * index}px)`;
+
+const startSlide = ()=>{
+    setInterval(()=>{
+        index++;
+        slide.style.transform = `translateX(${-slideWidth * index}px)`;  
+        slide.style.transition = '0.7s';
+        console.log(2);
+    },interval)
+}
+
+slide.addEventListener('transitionend',()=>{
+    let slides = document.querySelectorAll('.s-slide');
+    if(slides[index].id === firstClone.id){
+        slide.style.transition = 'none';
+        index = 1;
+        slide.style.transform = `translateX(${-slideWidth * index}px)`;
+    }
+})
+
+startSlide();

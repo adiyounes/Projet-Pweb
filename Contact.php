@@ -16,9 +16,26 @@
         ?>
     </nav>
     <section id="contact">
+        <div class="sponsors">
+            <div class="s-container">
+                <h2>Sponsors</h2>    
+                <div class="wrapper">
+                    <div class="s-slides">
+                        <div class="s-slide"><img src="Logos/s2.png" alt="" height="75%" width="75%"></div>
+                        <div class="s-slide"><img src="Logos/s3.png" alt="" height="75%" width="75%"></div>
+                        <div class="s-slide"><img src="Logos/s4.png" alt="" height="75%" width="75%"></div>
+                        <div class="s-slide"><img src="Logos/s5.png" alt="" height="75%" width="75%"></div>
+                        <div class="s-slide"><img src="Logos/s6.png" alt="" height="50%" width="75%"></div>
+                        <div class="s-slide"><img src="Logos/s7.png" alt="" height="50%" width="75%"></div>
+                        <div class="s-slide"><img src="Logos/s8.png" alt="" height="50%" width="75%"></div>
+                        <div class="s-slide"><img src="Logos/s1.png" alt="" height="75%" width="75%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="visiteus">
             <div>
-                <h2>Visite Us</h2>
+                <h2>Suivez nous</h2>
                 <hr>
             </div>
             <div class="contact-container">
@@ -41,7 +58,7 @@
         </div>
         <div class="container">
             <div class="row">
-                    <h2>contact us</h2>
+                    <h2>Nous contacter</h2>
                     <hr>
                     <?php
                         $msg='';
@@ -58,18 +75,18 @@
                     ?> 
                     
             </div>
-            <div class="form-container">
+            <div id="send" class="form-container">
                 <form action="mail.php" method="post">
-                    <input type="text" name="name" placeholder="Name" class="form-control mb-2">
+                    <input type="text" name="name" placeholder="Nom" class="form-control mb-2">
                     <input type="text" name="email" placeholder="Email" class="form-control mb-2">
-                    <input type="text" name="phone" placeholder="Phone Number" class="form-control mb-2">
+                    <input type="text" name="phone" placeholder="Numero de Telephone" class="form-control mb-2">
                     <textarea name="message" class="form-control mb-2" placeholder="Message"></textarea>
-                    <button class="btn btn-success" name="btn-send">Submit</button>
+                    <button class="btn btn-success" name="btn-send">Envoyer</button>
                 </form>
             </div>
         </div>        
     </section>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 
 </body>
 </html>
