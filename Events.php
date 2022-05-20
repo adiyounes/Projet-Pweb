@@ -14,11 +14,13 @@
 <body>
     <nav id="navbar" class="navbar">
         <?php
-            include 'nav.php';
+            include './nav.php';
         ?>
     </nav>
 <?php
-    include 'dbconnect.php';
+    include './dbconnect.php';
+    $query="SELECT eventdesc FROM events";
+    $result=mysqli_query($connect, $query);
     if(mysqli_num_rows($result)>0)
         {   
             $description=array();

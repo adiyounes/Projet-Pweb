@@ -14,7 +14,7 @@
 <body>
     <nav id="navbar" class="navbar">
         <?php
-            include 'nav.php';
+            include './nav.php';
         ?>
     </nav>
     <main>

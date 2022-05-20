@@ -1,6 +1,6 @@
 const slideContainer= document.querySelector('.wrapper');
 const slide = document.querySelector('.s-slides');
-const interval = 1000;
+const interval = 3000;
 
 let slides = document.querySelectorAll('.s-slide');
 let index = 0;
@@ -29,7 +29,6 @@ slide.style.transform = `translateX(${-slideWidth * index}px)`;
 
 const startSlide = ()=>{
     setInterval(()=>{
-        console.log(slides[index].id);
         index++;
         slide.style.transform = `translateX(${-slideWidth * index}px)`;  
         slide.style.transition = '0.7s';

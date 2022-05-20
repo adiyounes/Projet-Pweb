@@ -27,7 +27,7 @@
                 <li class="main-nav-element">
                     <a href="Contact.php" class="nav-page">Contact</a>
                 </li>
-                <a href="" class="reg-button">S'inscrire<i class="fas fa-arrow-right"></i></a>
+                <a href="Signup.php" class="reg-button">S'inscrire<i class="fas fa-arrow-right"></i></a>
             </ul>
     </div>
 <script>

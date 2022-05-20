@@ -11,6 +11,4 @@ else
 {
     die ("connect failed: %s \n".$connect -> error);
 }
-$query="SELECT eventdesc FROM events";
-$result=mysqli_query($connect, $query);
 ?>

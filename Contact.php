@@ -12,7 +12,7 @@
 <body>
     <nav id="navbar" class="navbar">
         <?php
-            include 'nav.php';
+            include './nav.php';
         ?>
     </nav>
     <section id="contact">
@@ -64,13 +64,13 @@
                         $msg='';
                         if(isset($_GET['error']))
                         {
-                            $msg = 'please fill in the blanks';
-                            echo '<div class="alert-fail"><h3>'.$msg.'</h3></div>';
+                            $msg = 'SVP remplir les espaces vides';
+                            echo '<div class="alert alert-fail"><h3>'.$msg.'</h3></div>';
                         }
                         if(isset($_GET['seccuss']))
                         {
-                            $msg = 'your message is sent';
-                            echo '<div class="alert-seccuss">'.$msg.'</div>';
+                            $msg = 'Votre message a été envoyé';
+                            echo '<div class="alert alert-seccuss"><h3>'.$msg.'</h3></div>';
                         }
                     ?> 
                     
