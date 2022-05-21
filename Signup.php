@@ -57,10 +57,10 @@
                     <div class="form-row">
                         <select name="Faculté">
                             <?php
-                                $index = 0;
-                                for($index=0;$index<count($faculties);$index++){
-                                    echo "<option class='option' value='".$faculties[$index]."'>".$faculties[$index]."</option>";
-                                }
+                            $index = 0;
+                            for ($index = 0; $index < count($faculties); $index++) {
+                                echo "<option class='option' value='" . $faculties[$index] . "'>" . $faculties[$index] . "</option>";
+                            }
                             ?>
                         </select>
                         <span class="select-btn">
@@ -70,32 +70,10 @@
                     <div class="form-row">
                         <select name="Annee">
                             <?php
-                                $index = 0;
-                                for($index=0;$index<count($year);$index++){
-                                    echo "<option class='option' value='".$year[$index]."'>".$year[$index]."</option>";
-                                }
-                            ?> 
-                        </select>
-                        <span class="select-btn">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </div>
-                    <div class="form-row">
-                        <select name="sp">
-                        <?php
-                                $query2 = "SELECT spName FROM spécialités order by spid"; 
-                                $result = mysqli_query($connect, $query2);
-                                if (mysqli_num_rows($result) > 0) {
-                                    $sp = array();
-                                    while ($row = mysqli_fetch_array($result)) {
-                                        $sp[] = $row['spName'];
-                                    }
-                                }
-
-                                $index = 0;
-                                for($index=0;$index<count($sp);$index++){
-                                    echo "<option class='option' value='".$sp[$index]."'>".$sp[$index]."</option>";
-                                }
+                            $index = 0;
+                            for ($index = 0; $index < count($year); $index++) {
+                                echo "<option class='option' value='" . $year[$index] . "'>" . $year[$index] . "</option>";
+                            }
                             ?>
                         </select>
                         <span class="select-btn">
@@ -103,10 +81,32 @@
                         </span>
                     </div>
                     <div class="form-row">
-                        <input type="text" name="email" id="email" class="input-text"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Email" required>
+                        <select name="sp">
+                            <?php
+                            $query2 = "SELECT spName FROM spécialités order by spid";
+                            $result = mysqli_query($connect, $query2);
+                            if (mysqli_num_rows($result) > 0) {
+                                $sp = array();
+                                while ($row = mysqli_fetch_array($result)) {
+                                    $sp[] = $row['spName'];
+                                }
+                            }
+
+                            $index = 0;
+                            for ($index = 0; $index < count($sp); $index++) {
+                                echo "<option class='option' value='" . $sp[$index] . "'>" . $sp[$index] . "</option>";
+                            }
+                            ?>
+                        </select>
+                        <span class="select-btn">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
                     </div>
                     <div class="form-row">
-                        <input type="text" name="PhoneNumber" id="email" class="input-text"  pattern="[0-9.]+" placeholder="Numéro de Téléphone" required>
+                        <input type="text" name="email" id="email" class="input-text" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="PhoneNumber" id="email" class="input-text" pattern="[0-9.]+" placeholder="Numéro de Téléphone" required>
                     </div>
                 </div>
                 <div class="form-right">
@@ -125,6 +125,67 @@
         </div>
     </div>
     <div class="stats">
+        <h2>Statistiques</h2>
+        <table id="stat">
+            <tr>
+                <th style="text-align: center">Faculté</th>
+                <th style="text-align: center">Pourcentage</th>
+                <th style="text-align: center">Nombres</th>
+            </tr>
+
+            <?php
+            function pourcentage($x, $y)
+            {
+                return ($x * 100) / $y;
+            }
+
+
+            $querynbF = "SELECT COUNT(*) FROM facultés";
+            $resultnbF = mysqli_query($connect, $querynbF);
+            $nbF = array();
+            $nbF = mysqli_fetch_array($resultnbF);
+
+            $index = 0;
+
+            $queryALL = "SELECT COUNT(*) FROM utilisateur";
+            $resultALL = mysqli_query($connect, $queryALL);
+            $nbtot = array();
+            $nbtot = mysqli_fetch_array($resultALL);
+
+            $tot = $nbtot[0];
+
+
+            for ($index = 0; $index < $nbF[0]; $index++) {
+                $queryF = "SELECT facultyName FROM facultés order by facultyid";
+                $resultF = mysqli_query($connect, $queryF);
+
+                if (mysqli_num_rows($resultF) > 0) {
+                    $fac = array();
+                    while ($row = mysqli_fetch_array($resultF)) {
+                        $fac[] = $row['facultyName'];
+                    }
+                }
+
+                $queryC = "SELECT COUNT(*) FROM utilisateur WHERE faculté='" . $fac[$index] . "'";
+                $resultC = mysqli_query($connect, $queryC);
+                if (!$resultC) {
+                } else {
+                    $nb = array();
+                    while ($row = mysqli_fetch_array($resultC)) {
+                        $nb[] = $row['COUNT(*)'];
+                    }
+
+
+                    $rs = pourcentage($nb[0], $tot);
+                    echo "<tr>
+                            <td>" . $fac[$index] . "</td>
+                            <td>" . $rs . "</td>
+                            <td>" . $nb[0] . "</td>
+                        </tr>";
+                }
+            }
+            ?>
+        </table>
     </div>
 </body>
 

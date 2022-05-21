@@ -19,7 +19,7 @@ $stmt ->bind_param("ssissssiss",$firstname,$lastname,$matricul,$fac,$annee,$sp,$
 if($stmt->execute()){
     header('location:signup.php?seccuss#send');
 }else{
-    header('location:contact.php?error#send');
+    header('location:signup.php?error#send');
 }
                                     
 ?>

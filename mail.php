@@ -14,8 +14,7 @@ if(isset($_POST["btn-send"])){
     {   
         
         $to = "younesadi18@gmail.com";
-        ini_set('SMTP','myserver');
-        ini_set('smtp_port',25);
+
         
         if(mail($to,$subject,$message))
         {
