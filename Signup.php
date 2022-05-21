@@ -39,6 +39,16 @@
                     $year[] = $row['year'];
                 }
             }
+
+            $msg = '';
+            if (isset($_GET['error'])) {
+                $msg = 'Numéro de telephone ou matriclue utilisée';
+                echo '<div id="alert" class="alert alert-fail"><h3>' . $msg . '</h3><a onclick="document.getElementById(`alert`).style.display=`none`"><i class="fas fa-window-close"></i></a></div>';
+            }
+            if (isset($_GET['seccuss'])) {
+                $msg = 'Inscription success';
+                echo '<div id="alert" class="alert alert-seccuss"><h3>' . $msg . '</h3><a onclick="document.getElementById(`alert`).style.display=`none`"><i class="fas fa-window-close"></i></a></div>';
+            }
             ?>
             <form class="form-detail" action="./register.php" method="post" id="myform">
                 <div class="form-left">
@@ -55,7 +65,7 @@
                         <input type="txt" name="Matricul" class="Matricul" id="Matricul" pattern="[0-9.]+" placeholder="Matricul" required>
                     </div>
                     <div class="form-row">
-                        <select name="Faculté">
+                        <select name="Faculté" id="faculté" onchange="fetch(this.value)">
                             <?php
                             $index = 0;
                             for ($index = 0; $index < count($faculties); $index++) {
@@ -81,7 +91,7 @@
                         </span>
                     </div>
                     <div class="form-row">
-                        <select name="sp">
+                        <select name="sp" id="sp">
                             <?php
                             $query2 = "SELECT spName FROM spécialités order by spid";
                             $result = mysqli_query($connect, $query2);
@@ -126,6 +136,8 @@
     </div>
     <div class="stats">
         <h2>Statistiques</h2>
+        <div class="parfac">
+            <h2>Statistique par faculté</h2>
         <table id="stat">
             <tr>
                 <th style="text-align: center">Faculté</th>
@@ -186,6 +198,71 @@
             }
             ?>
         </table>
+        </div>
+        <div class="parfac parannee">
+            <h2>Statistique par Année d'étude</h2>
+        <table id="stat">
+            <tr>
+                <th style="text-align: center">Année d'étude </th>
+                <th style="text-align: center">Pourcentage</th>
+                <th style="text-align: center">Nombres</th>
+            </tr>
+
+            <?php
+            function pourcentage1($x, $y)
+            {
+                return ($x * 100) / $y;
+            }
+
+
+            $querynbY = "SELECT COUNT(*) FROM year";
+            $resultnbY = mysqli_query($connect, $querynbY);
+            $nbY = array();
+            $nbY = mysqli_fetch_array($resultnbY);
+
+            $index = 0;
+
+            $queryALL = "SELECT COUNT(*) FROM utilisateur";
+            $resultALL = mysqli_query($connect, $queryALL);
+            $nbtot = array();
+            $nbtot = mysqli_fetch_array($resultALL);
+
+            $tot = $nbtot[0];
+
+
+            for ($index = 0; $index < $nbY[0]; $index++) {
+                $queryY = "SELECT year FROM year order by yearid";
+                $resultY = mysqli_query($connect, $queryY);
+
+                if (mysqli_num_rows($resultY) > 0) {
+                    $year = array();
+                    while ($row = mysqli_fetch_array($resultY)) {
+                        $year[] = $row['year'];
+                    }
+                }
+
+                $queryYY = "SELECT COUNT(*) FROM utilisateur WHERE year='" . $year[$index] . "'";
+                $resultYY = mysqli_query($connect, $queryYY);
+                if (!$resultYY) {
+                } else {
+                    $nb = array();
+                    while ($row = mysqli_fetch_array($resultYY)) {
+                        $nb[] = $row['COUNT(*)'];
+                    }
+
+
+                    $rs = pourcentage1($nb[0], $tot);
+                    echo "<tr>
+                            <td>" . $year[$index] . "</td>
+                            <td>" . $rs . "</td>
+                            <td>" . $nb[0] . "</td>
+                        </tr>";
+                }
+            }
+            ?>
+        </table>
+        </div>
+        
     </div>
 </body>
 

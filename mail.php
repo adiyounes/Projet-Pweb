@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST["btn-send"])){
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -15,7 +16,6 @@ if(isset($_POST["btn-send"])){
         
         $to = "younesadi18@gmail.com";
 
-        
         if(mail($to,$subject,$message))
         {
             header('location:contact.php?seccuss#send');
