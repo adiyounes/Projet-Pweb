@@ -6,6 +6,8 @@ if(isset($_POST["btn-send"])){
     $phone = $_POST["phone"];
     $message = $_POST["message"];
     $subject = "email from website";
+    $headers = 'From: webmaster@example.com' . "\r\n";
+    
     
     if(empty($name) ||empty($email) ||empty($phone) ||empty($message))
     {
@@ -16,7 +18,8 @@ if(isset($_POST["btn-send"])){
         
         $to = "contact@microclub.net";
 
-        if(mail($to,$subject,$message))
+
+        if(mail($to,$subject,$message,$headers))
         {
             header('location:contact.php?seccuss#send');
         }else{
@@ -28,4 +31,3 @@ else
 {
     header('location:contact.php');
 }
-?>
