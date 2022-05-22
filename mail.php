@@ -14,11 +14,13 @@ if(isset($_POST["btn-send"])){
     else
     {   
         
-        $to = "younesadi18@gmail.com";
+        $to = "contact@microclub.net";
 
         if(mail($to,$subject,$message))
         {
             header('location:contact.php?seccuss#send');
+        }else{
+            header('location:contact.php?error#send');
         }
     }
 }

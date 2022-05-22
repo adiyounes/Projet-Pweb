@@ -1,5 +1,3 @@
-
-
 <html lang="en">
 
 <head>
@@ -15,49 +13,45 @@
 <body>
     <nav id="navbar" class="navbar">
         <?php
-            include './nav.php';
+        include './nav.php';
         ?>
     </nav>
-<?php
+    <?php
     include './dbconnect.php';
-    $query="SELECT eventdesc FROM events";
-    $result=mysqli_query($connect, $query);
-    if(mysqli_num_rows($result)>0)
-        {   
-            $description=array();
-            while($row = mysqli_fetch_array($result)){
-                $description[]=$row['eventdesc'];
-            }
+    $query = "SELECT eventdesc FROM events";
+    $result = mysqli_query($connect, $query);
+    if (mysqli_num_rows($result) > 0) {
+        $description = array();
+        while ($row = mysqli_fetch_array($result)) {
+            $description[] = $row['eventdesc'];
         }
-        
-        $query="SELECT eventName FROM events";
-        $result=mysqli_query($connect, $query);
-        if(mysqli_num_rows($result)>0)
-        {   
-            $eventName=array();
-            while($row = mysqli_fetch_array($result)){
-                $eventName[]=$row['eventName'];
-            }
+    }
+
+    $query = "SELECT eventName FROM events";
+    $result = mysqli_query($connect, $query);
+    if (mysqli_num_rows($result) > 0) {
+        $eventName = array();
+        while ($row = mysqli_fetch_array($result)) {
+            $eventName[] = $row['eventName'];
         }
-        $query="SELECT eventDate FROM events";
-        $result=mysqli_query($connect, $query);
-        if(mysqli_num_rows($result)>0)
-        {   
-            $eventDate=array();
-            while($row = mysqli_fetch_array($result)){
-                $eventDate[]=$row['eventDate'];
-            }
+    }
+    $query = "SELECT eventDate FROM events";
+    $result = mysqli_query($connect, $query);
+    if (mysqli_num_rows($result) > 0) {
+        $eventDate = array();
+        while ($row = mysqli_fetch_array($result)) {
+            $eventDate[] = $row['eventDate'];
         }
-        $query="SELECT eventType FROM events";
-        $result=mysqli_query($connect, $query);
-        if(mysqli_num_rows($result)>0)
-        {   
-            $eventType=array();
-            while($row = mysqli_fetch_array($result)){
-                $eventType[]=$row['eventType'];
-            }
+    }
+    $query = "SELECT eventType FROM events";
+    $result = mysqli_query($connect, $query);
+    if (mysqli_num_rows($result) > 0) {
+        $eventType = array();
+        while ($row = mysqli_fetch_array($result)) {
+            $eventType[] = $row['eventType'];
         }
-    
+    }
+
     ?>
     <nav id="navbar" class="navbar"></nav>
     <section id="events-section">
@@ -74,13 +68,13 @@
             </div>
             <div class="right-container">
                 <?php
-                    echo "<h2>".$eventName[0]."</h2>";
-                ?> 
-                <?php
-                    echo "<h4>".$eventDate[0]." ".$eventType[0]."</h4>";
+                echo "<h2>" . $eventName[0] . "</h2>";
                 ?>
                 <?php
-                    echo "<p>".$description[0]."</p>";
+                echo "<h4>" . $eventDate[0] . " " . $eventType[0] . "</h4>";
+                ?>
+                <?php
+                echo "<p>" . $description[0] . "</p>";
                 ?>
             </div>
         </div>
@@ -91,17 +85,17 @@
                 </div>
             </div>
             <div class="right-container">
-            <div class="title-container">
-                <?php
-                    echo "<h2>".$eventName[1]."</h2>";
-                ?>
-                <?php
-                    echo "<h4>".$eventDate[1]." ".$eventType[1]."</h4>";
-                ?> 
+                <div class="title-container">
+                    <?php
+                    echo "<h2>" . $eventName[1] . "</h2>";
+                    ?>
+                    <?php
+                    echo "<h4>" . $eventDate[1] . " " . $eventType[1] . "</h4>";
+                    ?>
                 </div>
                 <div class="text-container">
                     <?php
-                        echo "<p>".$description[1]."</p>";
+                    echo "<p>" . $description[1] . "</p>";
                     ?>
                 </div>
             </div>
@@ -109,12 +103,12 @@
         <div class="AGC-container">
             <div class="up-container">
                 <div class="title-container">
-                <?php
-                    echo "<h2>".$eventName[2]."</h2>";
-                ?> 
-                <?php
-                    echo "<h4>".$eventDate[2]." ".$eventType[2]."</h4>";
-                ?>
+                    <?php
+                    echo "<h2>" . $eventName[2] . "</h2>";
+                    ?>
+                    <?php
+                    echo "<h4>" . $eventDate[2] . " " . $eventType[2] . "</h4>";
+                    ?>
                 </div>
                 <div class="logo-container">
                     <img src="images/Events/AGC.jpg" alt="" width="100px" height="100px">
@@ -122,8 +116,8 @@
             </div>
             <div class="down-container">
                 <div class="left">
-                <?php
-                        echo "<p>".$description[2]."</p>";
+                    <?php
+                    echo "<p>" . $description[2] . "</p>";
                     ?>
                 </div>
                 <div class="right">
@@ -167,13 +161,13 @@
             <div class="left-container">
                 <div class="txt-container">
                     <?php
-                        echo "<h2>".$eventName[3]."</h2>";
-                    ?> 
+                    echo "<h2>" . $eventName[3] . "</h2>";
+                    ?>
                     <?php
-                    echo "<h4>".$eventDate[3]." ".$eventType[3]."</h4>";
-                ?>
+                    echo "<h4>" . $eventDate[3] . " " . $eventType[3] . "</h4>";
+                    ?>
                     <?php
-                        echo "<p>".$description[3]."</p>";
+                    echo "<p>" . $description[3] . "</p>";
                     ?>
                 </div>
                 <div class="logo-container">
@@ -186,28 +180,28 @@
                 </div>
                 <div class="txt-container">
                     <?php
-                         echo "<h2>".$eventName[4]."</h2>";
-                    ?> 
-                    <?php
-                        echo "<h4>".$eventDate[4]." ".$eventType[4]."</h4>";
+                    echo "<h2>" . $eventName[4] . "</h2>";
                     ?>
                     <?php
-                        echo "<p>".$description[4]."</p>";
+                    echo "<h4>" . $eventDate[4] . " " . $eventType[4] . "</h4>";
+                    ?>
+                    <?php
+                    echo "<p>" . $description[4] . "</p>";
                     ?>
                 </div>
             </div>
         </div>
         <div class="winter-hacks">
             <div class="winter">
-            <?php
-                echo "<h2>".$eventName[5]."</h2>";
-            ?>
-            <?php
-                echo "<h4>".$eventDate[5]." ".$eventType[5]."</h4>";
-            ?>
+                <?php
+                echo "<h2>" . $eventName[5] . "</h2>";
+                ?>
+                <?php
+                echo "<h4>" . $eventDate[5] . " " . $eventType[5] . "</h4>";
+                ?>
             </div>
             <?php
-                echo "<p>".$description[5]."</p>";
+            echo "<p>" . $description[5] . "</p>";
             ?>
         </div>
     </section>

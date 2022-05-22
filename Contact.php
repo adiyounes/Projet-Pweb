@@ -64,7 +64,7 @@
                         $msg='';
                         if(isset($_GET['error']))
                         {
-                            $msg = 'SVP remplir les espaces vides';
+                            $msg = "SVP remplir les espaces vides ou service n'est pas desponible";
                             echo '<div class="alert alert-fail"><h3>'.$msg.'</h3></div>';
                         }
                         if(isset($_GET['seccuss']))
