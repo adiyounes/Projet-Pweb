@@ -65,7 +65,7 @@
                         <input type="txt" name="Matricul" class="Matricul" id="Matricul" pattern="[0-9.]+" placeholder="Matricul" required>
                     </div>
                     <div class="form-row">
-                        <select name="Faculté" id="faculté" onchange="fetch(this.value)">
+                        <select name="Faculté" id="faculté">
                             <?php
                             $index = 0;
                             for ($index = 0; $index < count($faculties); $index++) {

@@ -1,0 +1,5 @@
+-J'ai fait tout ce qui a été demandé et tout fonctionne très bien.
+
+-Envoyer du courrier fonctionne "J'ai dû changer beaucoup de choses dans le php.init et sendmail comme le port, j'ai utilisé 465 au lieu de 25".
+
+-la base de données fonctionne parfaitement bien et tout s'affiche comme il se doit et les statistiques que j'ai ajoutées à la dernière page est dynamique, chaque fois qu'un étudiant s'inscrit, les statistiques sont mises à jour.
